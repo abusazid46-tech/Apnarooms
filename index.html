@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>ApnaRooms | Lavender Luxe · Zero-Brokerage Housing Guwahati</title>
+    <!-- Bootstrap 5 + Icons + Google Fonts -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- GSAP + ScrollTrigger for smooth scroll animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(145deg, #f5efff 0%, #ede4f5 100%);
+            color: #1e1a2f;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        /* LUXURY LAVENDER THEME VARIABLES */
+        :root {
+            --lavender-gold: linear-gradient(125deg, #c8a9f0 0%, #e9d5ff 40%, #b67fe6 100%);
+            --purple-luxe: #5e3a8c;
+            --soft-lavender: #f3eaff;
+            --glass-bg: rgba(255, 245, 255, 0.92);
+            --glass-border: rgba(200, 169, 240, 0.4);
+            --shadow-3d: 0 20px 35px -12px rgba(94, 58, 140, 0.15), 0 0 0 1px rgba(200, 169, 240, 0.3);
+            --hover-lux: 0 30px 45px -15px rgba(94, 58, 140, 0.25), 0 0 0 2px rgba(200, 169, 240, 0.6);
+            --transition-lux: all 0.45s cubic-bezier(0.2, 0.95, 0.4, 1);
+        }
+        /* glassmorphic navbar - purple elegance */
+        .navbar-lux {
+            backdrop-filter: blur(20px) saturate(200%);
+            background: rgba(95, 60, 135, 0.85);
+            border-bottom: 1px solid rgba(230, 200, 255, 0.4);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            padding: 0.65rem 0;
+        }
+        .navbar-brand-lux {
+            font-weight: 800;
+            font-size: 2rem;
+            background: var(--lavender-gold);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .navbar-brand-lux i {
+            background: none;
+            color: #f3e5ff;
+            font-size: 2rem;
+            filter: drop-shadow(0 2px 8px rgba(200, 169, 240, 0.6));
+        }
+        .nav-link-lux {
+            font-weight: 600;
+            color: #f9f2ff !important;
+            transition: var(--transition-lux);
+            margin: 0 6px;
+            border-radius: 60px;
+            padding: 8px 20px;
+            letter-spacing: 0.2px;
+        }
+        .nav-link-lux:hover {
+            background: rgba(230, 200, 255, 0.25);
+            color: #ffffff !important;
+            transform: translateY(-2px);
+        }
+        .trust-gold {
+            background: rgba(230, 200, 255, 0.3);
+            backdrop-filter: blur(8px);
+            border-radius: 60px;
+            padding: 6px 18px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #fff0ff;
+            border: 1px solid rgba(230, 200, 255, 0.6);
+        }
+        /* Hero - lavender dream with zigzag */
+        .hero-luxury {
+            background: radial-gradient(circle at 10% 30%, #6a4e9e, #311c4a);
+            border-radius: 0 0 3rem 3rem;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            padding: 3rem 0 3rem;
+        }
+        .hero-luxury::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('https://www.transparenttextures.com/patterns/soft-linen.png');
+            opacity: 0.08;
+            pointer-events: none;
+        }
+        .kinetic-headline {
+            perspective: 800px;
+            margin-bottom: 1rem;
+        }
+        .zigzag-word {
+            display: inline-block;
+            will-change: transform, opacity;
+            font-weight: 800;
+            background: linear-gradient(125deg, #f2e6ff, #e4ccff, #d4b0ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 15px rgba(200, 169, 240, 0.5);
+        }
+        .glow-sub {
+            text-shadow: 0 0 12px rgba(230, 200, 255, 0.6);
+            color: #f7f0ff;
+        }
+        .search-gold-group {
+            border-radius: 80px;
+            background: rgba(255, 250, 255, 0.98);
+            box-shadow: 0 25px 40px -15px rgba(0,0,0,0.2), 0 0 0 1px rgba(200, 169, 240, 0.5);
+            transition: var(--transition-lux);
+        }
+        .search-gold-group:focus-within {
+            box-shadow: 0 30px 45px -18px rgba(94, 58, 140, 0.4), 0 0 0 3px rgba(200, 169, 240, 0.7);
+            transform: scale(1.01);
+        }
+        .btn-purple-gradient {
+            background: linear-gradient(115deg, #7c5eb3, #a07ad2);
+            border: none;
+            border-radius: 60px;
+            font-weight: 800;
+            padding: 0.7rem 2rem;
+            color: white;
+            transition: all 0.2s ease;
+            letter-spacing: 0.3px;
+        }
+        .btn-purple-gradient:active { transform: scale(0.97); }
+        .auto-locate-gold {
+            background: rgba(200, 169, 240, 0.25);
+            backdrop-filter: blur(12px);
+            border-radius: 60px;
+            padding: 6px 20px;
+            font-weight: 600;
+            transition: var(--transition-lux);
+            cursor: pointer;
+            border: 0.5px solid rgba(230, 200, 255, 0.7);
+            color: white;
+        }
+        .category-lux {
+            background: rgba(255, 245, 255, 0.85);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(160, 122, 210, 0.4);
+            border-radius: 60px;
+            padding: 10px 28px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            color: #2e1a4a;
+        }
+        .category-lux i { margin-right: 8px; }
+        .category-lux.active {
+            background: linear-gradient(115deg, #9c7ed4, #b48ce6);
+            border: none;
+            color: white;
+            box-shadow: 0 12px 18px -10px rgba(156, 126, 212, 0.5);
+            transform: scale(1.02);
+        }
+        .property-card-lux {
+            background: rgba(255, 250, 255, 0.98);
+            backdrop-filter: blur(0px);
+            border-radius: 2rem;
+            border: 1px solid rgba(160, 122, 210, 0.25);
+            transition: var(--transition-lux);
+            overflow: hidden;
+            box-shadow: var(--shadow-3d);
+            height: 100%;
+        }
+        .property-card-lux:hover {
+            transform: translateY(-12px) scale(1.01);
+            box-shadow: var(--hover-lux);
+            border-color: rgba(160, 122, 210, 0.7);
+        }
+        .img-zoom-wrapper {
+            overflow: hidden;
+            position: relative;
+        }
+        .img-zoom-wrapper img {
+            transition: transform 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.2);
+            height: 240px;
+            object-fit: cover;
+            width: 100%;
+        }
+        .property-card-lux:hover .img-zoom-wrapper img {
+            transform: scale(1.07);
+        }
+        .verified-lux-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: linear-gradient(105deg, #c8a9f0, #e2c5ff);
+            color: #2c1a42;
+            font-weight: 800;
+            font-size: 0.7rem;
+            padding: 6px 18px;
+            border-radius: 40px;
+            backdrop-filter: blur(2px);
+            z-index: 12;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+        }
+        .price-lux {
+            font-size: 1.55rem;
+            font-weight: 800;
+            background: linear-gradient(125deg, #7c5eb3, #b48ce6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .btn-book-lux {
+            background: linear-gradient(115deg, #2e1a4a, #4e2f77);
+            border: none;
+            border-radius: 40px;
+            font-weight: 700;
+            padding: 8px 22px;
+            transition: all 0.25s;
+            color: #f3e5ff;
+        }
+        .btn-book-lux:hover {
+            background: linear-gradient(115deg, #b48ce6, #9c7ed4);
+            color: #1f0f33;
+            transform: scale(1.02);
+        }
+        .shimmer-lux {
+            background: linear-gradient(110deg, #e9dcf5 8%, #f7efff 18%, #e9dcf5 33%);
+            background-size: 200% 100%;
+            animation: shimmerMove 1.2s linear infinite;
+        }
+        @keyframes shimmerMove {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        .footer-lux {
+            background: #1f1333;
+            color: #ddd0f0;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(200, 169, 240, 0.3);
+        }
+        .social-lux i {
+            font-size: 1.6rem;
+            transition: 0.2s;
+            color: #c8b0e6;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        .social-lux i:hover { transform: translateY(-5px); color: #e9d5ff; }
+        @media (max-width: 768px) {
+            .hero-luxury { padding: 2rem 1rem; }
+            .category-lux { padding: 6px 18px; font-size: 0.8rem; }
+            .zigzag-word { font-size: 1.8rem; display: inline-block; }
+        }
+        /* modal purple accent */
+        .modal-purple-header {
+            background: linear-gradient(95deg, #3a2660, #5a3f85);
+            color: #f3eaff;
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR WITH HOME/HOTEL LOGO REPLACEMENT -->
+<nav class="navbar navbar-expand-lg sticky-top navbar-lux py-2">
+    <div class="container">
+        <a class="navbar-brand-lux" href="#">
+            <i class="bi bi-house-heart-fill"></i> ApnaRooms
+        </a>
+        <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#luxNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="luxNavbar">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link nav-link-lux" href="#"><i class="bi bi-building"></i> Estates</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-lux" href="#listings"><i class="bi bi-grid-3x3-gap-fill"></i> Residences</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-lux" href="#"><i class="bi bi-shield-check"></i> Concierge</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-lux" href="#"><i class="bi bi-person-circle"></i> Account</a></li>
+            </ul>
+            <div class="trust-gold">
+                <i class="bi bi-patch-check-fill"></i> 24K Verified Listings
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO WITH ZIGZAG + SCROLL ANIMATION -->
+<section class="hero-luxury">
+    <div class="container">
+        <div class="text-center text-white mb-4 kinetic-headline" id="kineticHeadline">
+            <h1 class="display-4 fw-bold" id="animatedTitle" style="line-height: 1.3;">
+                <span class="zigzag-word" data-word="The">The</span>
+                <span class="zigzag-word" data-word="ApnaRooms">ApnaRooms</span>
+                <span class="zigzag-word" data-word="Atelier">Atelier</span>
+                <span class="zigzag-word" data-word="—">—</span>
+                <span class="zigzag-word" data-word="Zero">Zero</span>
+                <span class="zigzag-word" data-word="Brokerage,">Brokerage,</span>
+                <span class="zigzag-word" data-word="Infinite">Infinite</span>
+                <span class="zigzag-word" data-word="Luxury.">Luxury.</span>
+            </h1>
+            <p class="lead glow-sub mt-3" id="subline">Curated PG, Homestays, Flats & Roommates in Guwahati. Verified, Seamless, Opulent.</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-7">
+                <div class="search-gold-group d-flex align-items-stretch p-1">
+                    <div style="flex:1;">
+                        <input type="text" id="luxSearchInput" class="form-control-lg w-100 border-0 bg-transparent" placeholder="🔍 Search by locality, property, or budget...">
+                    </div>
+                    <button class="btn-purple-gradient" id="luxSearchBtn"><i class="bi bi-search-heart"></i> Search</button>
+                </div>
+                <div class="d-flex justify-content-between mt-4 align-items-center flex-wrap gap-2">
+                    <div class="auto-locate-gold" id="luxAutoLocate">
+                        <i class="bi bi-satellite"></i> Auto-detect my location
+                    </div>
+                    <div class="d-flex gap-2 bg-white rounded-pill p-1 shadow-sm">
+                        <input type="number" id="luxMinPrice" placeholder="Min ₹" style="width: 90px;" class="border-0 form-control-sm rounded-pill">
+                        <span>-</span>
+                        <input type="number" id="luxMaxPrice" placeholder="Max ₹" style="width: 90px;" class="border-0 form-control-sm rounded-pill">
+                        <button id="luxPriceFilter" class="btn btn-sm rounded-pill" style="background:#c8a9f0; color:#2e1a4a; font-weight:600;">Apply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<main class="container mb-5" id="listings">
+    <div class="category-scroll d-flex gap-3 mb-5 pb-2 overflow-auto" style="scrollbar-width: thin;">
+        <button class="category-lux active" data-category="all"><i class="bi bi-crown-fill"></i> All Estates</button>
+        <button class="category-lux" data-category="PG"><i class="bi bi-building"></i> PG Luxury</button>
+        <button class="category-lux" data-category="Homestay"><i class="bi bi-flower1"></i> Homestay</button>
+        <button class="category-lux" data-category="Flat"><i class="bi bi-door-closed-fill"></i> Flats</button>
+        <button class="category-lux" data-category="Roommate"><i class="bi bi-people-fill"></i> Roommate Elite</button>
+    </div>
+
+    <div id="luxSkeleton" class="row g-4" style="display: none;">
+        <div class="col-md-6 col-lg-4"><div class="property-card-lux"><div class="shimmer-lux" style="height:240px;"></div><div class="p-3"><div class="shimmer-lux" style="height:22px; width:80%; margin-bottom:12px;"></div><div class="shimmer-lux" style="height:16px; width:50%;"></div></div></div></div>
+        <div class="col-md-6 col-lg-4"><div class="property-card-lux"><div class="shimmer-lux" style="height:240px;"></div><div class="p-3"><div class="shimmer-lux" style="height:22px; width:80%; margin-bottom:12px;"></div><div class="shimmer-lux" style="height:16px; width:50%;"></div></div></div></div>
+        <div class="col-md-6 col-lg-4"><div class="property-card-lux"><div class="shimmer-lux" style="height:240px;"></div><div class="p-3"><div class="shimmer-lux" style="height:22px; width:80%; margin-bottom:12px;"></div><div class="shimmer-lux" style="height:16px; width:50%;"></div></div></div></div>
+    </div>
+
+    <div id="luxPropertiesGrid" class="row g-4"></div>
+    <div id="luxNoResults" class="text-center py-5 d-none"><i class="bi bi-emoji-frown fs-1" style="color:#a07ad2;"></i><p class="mt-3 fw-semibold">No estates found — refine your filters ✨</p></div>
+
+    <div class="mt-5 pt-4" id="recentSectionLux">
+        <hr class="my-4 opacity-25" style="border-color:#c8a9f0;">
+        <div class="d-flex align-items-center gap-2 mb-4"><i class="bi bi-clock-history fs-3" style="color:#a07ad2;"></i><h3 class="mb-0 fw-bold">Recently Visited Estates</h3></div>
+        <div id="luxRecentGrid" class="row g-4"></div>
+    </div>
+</main>
+
+<footer class="footer-lux pt-5 pb-4">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4"><h5 class="fw-bold mb-3" style="color:#d9c2ff;"><i class="bi bi-house-door-fill"></i> ApnaRooms</h5><p class="small opacity-75">Luxury rental ecosystem · 0% brokerage · AI verified homes in Guwahati.</p><div class="social-lux d-flex"><i class="bi bi-instagram"></i><i class="bi bi-whatsapp"></i><i class="bi bi-twitter-x"></i><i class="bi bi-facebook"></i></div></div>
+            <div class="col-md-4"><h5 class="fw-bold mb-3" style="color:#d9c2ff;">Concierge</h5><ul class="list-unstyled small"><li><a href="#" class="text-white-50 text-decoration-none">🏛️ Prestige Listings</a></li><li><a href="#" class="text-white-50 text-decoration-none">🔐 Safety Vault</a></li><li><a href="#" class="text-white-50 text-decoration-none">📜 Terms of Opulence</a></li><li><a href="#" class="text-white-50 text-decoration-none">🌟 Privacy</a></li></ul></div>
+            <div class="col-md-4"><h5 class="fw-bold mb-3" style="color:#d9c2ff;">White Glove Support</h5><p><i class="bi bi-envelope-paper"></i> royal@apnarooms.com</p><p><i class="bi bi-geo-alt-fill"></i> GS Road, Guwahati · 781005</p><button id="luxSupportBtn" class="btn btn-outline-light btn-sm rounded-pill"><i class="bi bi-headset"></i> 24K Helpline</button></div>
+        </div>
+        <hr class="mt-4 opacity-25"><div class="text-center small opacity-50">© 2025 ApnaRooms — Ultra-luxury PropTech. Zero Brokerage, Infinite Trust.</div>
+    </div>
+</footer>
+
+<!-- MODAL with purple theme -->
+<div class="modal fade" id="luxBookingModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content rounded-5 border-0 shadow-xxl" style="background: #ffffffec; backdrop-filter: blur(2px);">
+            <div class="modal-header modal-purple-header" style="border-radius: 1.5rem 1.5rem 0 0;">
+                <h5 class="modal-title fw-bold"><i class="bi bi-diamond-fill"></i> Secure Token Booking</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body p-4">
+                <div id="luxModalRoomInfo" class="mb-3 fs-5 fw-semibold"></div>
+                <div class="booking-summary bg-light p-3 rounded-4 border">
+                    <div class="d-flex justify-content-between"><span>💎 Monthly Rent:</span><span id="luxModalRent" class="fw-bold" style="color:#a07ad2;">₹0</span></div>
+                    <div class="d-flex justify-content-between mt-2"><span>🏷️ Token Fee (10% of Rent):</span><span id="luxModalToken" class="fw-bold">₹0</span></div>
+                    <hr><div class="d-flex justify-content-between"><span>✨ Total Payable:</span><span id="luxModalTotal" class="fw-bold fs-4" style="color:#7c5eb3;">₹0</span></div>
+                </div>
+                <div class="mt-4"><label class="fw-semibold">📅 Availability Simulation</label><select id="luxAvailabilitySelect" class="form-select mt-1 rounded-pill"><option value="available">✅ Available — Instantly Bookable</option><option value="unavailable">❌ Unavailable (demo)</option></select><div id="luxAvailMsg" class="small text-danger mt-1"></div>
+                <button id="luxConfirmPay" class="btn w-100 mt-4 py-2 rounded-pill" style="background: linear-gradient(115deg, #9c7ed4, #b48ce6); font-weight:800; color:white;">💳 Simulate Payment Gateway</button></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // ZIGZAG & SCROLL TEXT ANIMATION
+    function initKineticZigzag() {
+        const words = document.querySelectorAll('.zigzag-word');
+        gsap.set(words, { opacity: 0, y: 40, rotateX: -15 });
+        const tl = gsap.timeline();
+        words.forEach((word, idx) => {
+            const xOffset = idx % 2 === 0 ? -20 : 20;
+            tl.fromTo(word, 
+                { opacity: 0, y: 60, x: xOffset, rotateZ: idx % 2 === 0 ? -8 : 8, rotateX: 25 },
+                { opacity: 1, y: 0, x: 0, rotateZ: 0, rotateX: 0, duration: 0.65, ease: "back.out(1.2)" },
+                idx * 0.08
+            );
+        });
+        ScrollTrigger.create({
+            trigger: ".hero-luxury",
+            start: "top top",
+            end: "bottom top",
+            scrub: 1.2,
+            onUpdate: (self) => {
+                const progress = self.progress;
+                words.forEach((word, idx) => {
+                    const moveX = (idx % 2 === 0 ? -12 : 12) * progress;
+                    const rotate = (idx % 2 === 0 ? -6 : 6) * progress;
+                    gsap.to(word, { duration: 0.2, x: moveX, rotateZ: rotate, y: -8 * progress, overwrite: true, ease: "power1.out" });
+                });
+            }
+        });
+        gsap.to("#subline", { y: 5, duration: 2.5, repeat: -1, yoyo: true, ease: "sine.inOut" });
+        words.forEach(word => {
+            word.addEventListener("mouseenter", () => gsap.to(word, { scale: 1.08, duration: 0.25, textShadow: "0 0 12px #e4ccff", ease: "back.out(1)" }));
+            word.addEventListener("mouseleave", () => gsap.to(word, { scale: 1, duration: 0.3, textShadow: "none", ease: "power2.out" }));
+        });
+    }
+
+    // ---------- PROPERTIES (ALL CORE FEATURES INTACT) ----------
+    const properties = [
+        { id: 1, name: "The Golden Arc PG (Boys)", location: "Uzan Bazar", price: 7500, verified: true, category: "PG", img: "https://picsum.photos/id/164/500/350", img2: "https://picsum.photos/id/169/500/350", img3: "https://picsum.photos/id/175/500/350" },
+        { id: 2, name: "Brahmaputra Heritage Homestay", location: "Panbazar", price: 12000, verified: true, category: "Homestay", img: "https://picsum.photos/id/20/500/350", img2: "https://picsum.photos/id/22/500/350", img3: "https://picsum.photos/id/28/500/350" },
+        { id: 3, name: "Emerald Valley Flat", location: "Dispur", price: 18500, verified: true, category: "Flat", img: "https://picsum.photos/id/106/500/350", img2: "https://picsum.photos/id/108/500/350", img3: "https://picsum.photos/id/112/500/350" },
+        { id: 4, name: "Roommate Elite - Tech Professional", location: "GS Road", price: 8000, verified: true, category: "Roommate", img: "https://picsum.photos/id/152/500/350", img2: "https://picsum.photos/id/155/500/350", img3: "https://picsum.photos/id/159/500/350" },
+        { id: 5, name: "Velvet Suites PG for Women", location: "Beltola", price: 9500, verified: true, category: "PG", img: "https://picsum.photos/id/29/500/350", img2: "https://picsum.photos/id/39/500/350", img3: "https://picsum.photos/id/42/500/350" },
+        { id: 6, name: "Riverside Opus Homestay", location: "Fancy Bazar", price: 14500, verified: false, category: "Homestay", img: "https://picsum.photos/id/96/500/350", img2: "https://picsum.photos/id/98/500/350", img3: "https://picsum.photos/id/100/500/350" },
+        { id: 7, name: "2BHK Grandeur Flat", location: "Zoo Road", price: 22000, verified: true, category: "Flat", img: "https://picsum.photos/id/177/500/350", img2: "https://picsum.photos/id/179/500/350", img3: "https://picsum.photos/id/190/500/350" },
+        { id: 8, name: "Roommate - Student Royal", location: "Jayanagar", price: 5500, verified: true, category: "Roommate", img: "https://picsum.photos/id/202/500/350", img2: "https://picsum.photos/id/205/500/350", img3: "https://picsum.photos/id/210/500/350" }
+    ];
+
+    let currentFiltered = [...properties];
+    let activeCat = "all";
+    let minPrice = null, maxPrice = null, searchKeyword = "";
+    let recentList = [];
+    let modalRef = null;
+
+    function saveRecent() { localStorage.setItem("apnarooms_lux_recent", JSON.stringify(recentList)); }
+    function loadRecentStorage() { const stored = localStorage.getItem("apnarooms_lux_recent"); if(stored) { recentList = JSON.parse(stored); if(!Array.isArray(recentList)) recentList = []; } renderRecent(); }
+    function addRecent(prop) { recentList = recentList.filter(p => p.id !== prop.id); recentList.unshift(prop); if(recentList.length > 5) recentList.pop(); saveRecent(); renderRecent(); }
+    function renderRecent() {
+        const container = document.getElementById("luxRecentGrid"); if(!container) return;
+        if(recentList.length === 0) { container.innerHTML = `<div class="col-12 text-center text-muted"><i class="bi bi-eye-off"></i> No estates viewed recently.</div>`; return; }
+        let html = '';
+        recentList.forEach(p => { html += `<div class="col-md-4 col-lg-3"><div class="property-card-lux"><div class="img-zoom-wrapper"><img src="${p.img}" class="w-100" style="height:140px;object-fit:cover;"></div><div class="p-2"><h6 class="fw-bold">${p.name}</h6><p class="small text-muted">${p.location}</p><button class="btn btn-sm rounded-pill recent-view-lux" data-id="${p.id}" style="background:#c8a9f0; color:#2e1a4a; font-weight:600;">View again</button></div></div></div>`; });
+        container.innerHTML = html;
+        document.querySelectorAll('.recent-view-lux').forEach(btn => btn.addEventListener('click', (e) => { const prop = properties.find(p => p.id == btn.dataset.id); if(prop) openLuxBooking(prop); }));
+    }
+
+    async function renderCardsWithLuxury(arr) {
+        const skeleton = document.getElementById("luxSkeleton");
+        const grid = document.getElementById("luxPropertiesGrid");
+        skeleton.style.display = "flex"; grid.style.display = "none";
+        await new Promise(r => setTimeout(r, 280));
+        renderLuxCards(arr);
+        skeleton.style.display = "none"; grid.style.display = "flex";
+    }
+
+    function renderLuxCards(propList) {
+        const grid = document.getElementById("luxPropertiesGrid");
+        const noRes = document.getElementById("luxNoResults");
+        if(!propList.length) { grid.innerHTML = ''; noRes.classList.remove("d-none"); return; }
+        noRes.classList.add("d-none");
+        let html = '';
+        propList.forEach(prop => {
+            const isRoommate = prop.category === "Roommate";
+            const priceHtml = isRoommate ? `<span class="price-lux fs-6">💰 Budget: ₹${prop.price}/mo</span>` : `<span class="price-lux">₹${prop.price}<small>/mo</small></span>`;
+            const btnText = isRoommate ? '<i class="bi bi-chat-dots"></i> Connect' : '<i class="bi bi-lightning-charge"></i> Secure Book';
+            const images = [prop.img, prop.img2, prop.img3];
+            const indicators = images.map((_, idx) => `<button type="button" data-bs-target="#luxCar${prop.id}" data-bs-slide-to="${idx}" class="${idx===0?'active':''}"></button>`).join('');
+            const slides = images.map((src, idx) => `<div class="carousel-item ${idx===0?'active':''}"><img src="${src}" class="d-block w-100" loading="lazy" onerror="this.src='https://placehold.co/600x400/e9ecef/6c757d?text=ApnaRooms+Luxury'"></div>`).join('');
+            html += `<div class="col-md-6 col-lg-4">
+                <div class="property-card-lux h-100">
+                    <div class="position-relative img-zoom-wrapper">
+                        <div id="luxCar${prop.id}" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators" style="margin-bottom:4px;">${indicators}</div>
+                            <div class="carousel-inner">${slides}</div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#luxCar${prop.id}" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#luxCar${prop.id}" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+                        </div>
+                        ${prop.verified ? '<div class="verified-lux-badge"><i class="bi bi-patch-check-fill"></i> CERTIFIED GOLD</div>' : ''}
+                    </div>
+                    <div class="card-body p-3">
+                        <h5 class="card-title fw-bold">${prop.name}</h5>
+                        <p class="text-secondary-emphasis"><i class="bi bi-geo-alt-fill"></i> ${prop.location} · ${prop.category}</p>
+                        <div class="d-flex justify-content-between align-items-center mt-2 flex-wrap gap-2">
+                            ${priceHtml}
+                            <button class="btn-book-lux action-lux-btn" data-id="${prop.id}" data-cat="${prop.category}">${btnText}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+        });
+        grid.innerHTML = html;
+        document.querySelectorAll('.action-lux-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const id = parseInt(btn.dataset.id);
+                const prop = properties.find(p => p.id === id);
+                if(!prop) return;
+                addRecent(prop);
+                if(prop.category === "Roommate") { window.open(`https://wa.me/?text=${encodeURIComponent(`Hi ApnaRooms, interested in elite roommate: ${prop.name} (₹${prop.price})`)}`, '_blank'); }
+                else { openLuxBooking(prop); }
+            });
+        });
+    }
+
+    function filterAll() {
+        let filtered = [...properties];
+        if(activeCat !== "all") filtered = filtered.filter(p => p.category === activeCat);
+        if(searchKeyword.trim()) { const s = searchKeyword.toLowerCase(); filtered = filtered.filter(p => p.location.toLowerCase().includes(s) || p.name.toLowerCase().includes(s) || p.price.toString().includes(s)); }
+        if(minPrice !== null && !isNaN(minPrice)) filtered = filtered.filter(p => p.price >= minPrice);
+        if(maxPrice !== null && !isNaN(maxPrice)) filtered = filtered.filter(p => p.price <= maxPrice);
+        renderCardsWithLuxury(filtered);
+    }
+
+    let debouncer;
+    function onSearchInput() { clearTimeout(debouncer); debouncer = setTimeout(() => { searchKeyword = document.getElementById("luxSearchInput").value; filterAll(); }, 250); }
+    function onPriceFilter() { minPrice = parseInt(document.getElementById("luxMinPrice").value) || null; maxPrice = parseInt(document.getElementById("luxMaxPrice").value) || null; filterAll(); }
+    function setCategoryLux(cat) { activeCat = cat; document.querySelectorAll('.category-lux').forEach(btn => { if(btn.dataset.category === cat) btn.classList.add('active'); else btn.classList.remove('active'); }); filterAll(); }
+
+    document.getElementById("luxAutoLocate")?.addEventListener("click", () => { document.getElementById("luxSearchInput").value = "Guwahati, GS Road"; searchKeyword = "Guwahati, GS Road"; filterAll(); alert("📍 Location optimized: Guwahati prime corridor"); });
+    document.getElementById("luxSearchBtn").addEventListener("click", () => { searchKeyword = document.getElementById("luxSearchInput").value; filterAll(); });
+    document.getElementById("luxPriceFilter").addEventListener("click", onPriceFilter);
+    document.querySelectorAll(".category-lux").forEach(btn => btn.addEventListener("click", () => setCategoryLux(btn.dataset.category)));
+
+    let currentLuxProp = null;
+    function openLuxBooking(prop) { currentLuxProp = prop; const tokenAmt = Math.floor(prop.price * 0.1); document.getElementById("luxModalRoomInfo").innerHTML = `<strong>🏆 ${prop.name}</strong> <span class="badge bg-secondary">${prop.location}</span>`; document.getElementById("luxModalRent").innerText = `₹${prop.price}`; document.getElementById("luxModalToken").innerText = `₹${tokenAmt}`; document.getElementById("luxModalTotal").innerText = `₹${tokenAmt}`; document.getElementById("luxAvailabilitySelect").value = "available"; document.getElementById("luxAvailMsg").innerHTML = ""; if(!modalRef) modalRef = new bootstrap.Modal(document.getElementById("luxBookingModal")); modalRef.show(); }
+    document.getElementById("luxAvailabilitySelect")?.addEventListener("change", function() { document.getElementById("luxAvailMsg").innerHTML = this.value === "unavailable" ? "❌ This estate is temporarily reserved" : "✅ Ready for instant token booking"; });
+    document.getElementById("luxConfirmPay")?.addEventListener("click", async () => { if(document.getElementById("luxAvailabilitySelect").value === "unavailable") { alert("Estate unavailable"); return; } const btn = document.getElementById("luxConfirmPay"); btn.disabled = true; btn.innerText = "⏳ Processing..."; await new Promise(r => setTimeout(r, 700)); alert(`✨ Token payment of ₹${Math.floor(currentLuxProp.price*0.1)} successful! Your stay at ${currentLuxProp.name} is confirmed.`); btn.disabled = false; btn.innerText = "💳 Simulate Payment Gateway"; modalRef.hide(); });
+    document.getElementById("luxSupportBtn")?.addEventListener("click", () => alert("📞 ApnaRooms 24K Helpline: +91 98765 43210 · Live chat available"));
+
+    window.addEventListener("DOMContentLoaded", () => {
+        initKineticZigzag();
+        loadRecentStorage();
+        renderCardsWithLuxury(properties);
+        document.getElementById("luxSearchInput").addEventListener("input", onSearchInput);
+    });
+</script>
+</body>
+</html>
