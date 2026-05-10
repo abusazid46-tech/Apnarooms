@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>ApnaRooms | Lavender Luxe · Zero-Brokerage Housing Guwahati</title>
+    <title>ApnaRooms | Zero-Brokerage Housing Guwahati</title>
     <!-- Bootstrap 5 + Icons + Google Fonts -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -12,262 +12,256 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background: linear-gradient(145deg, #f5efff 0%, #ede4f5 100%);
-            color: #1e1a2f;
+            background: linear-gradient(145deg, #eaf2ff 0%, #ddeeff 100%);
+            color: #0d1f3c;
             scroll-behavior: smooth;
             overflow-x: hidden;
         }
-        /* LUXURY LAVENDER THEME VARIABLES */
+        /* ── DEEP BLUE + ORANGE THEME ── */
         :root {
-            --lavender-gold: linear-gradient(125deg, #c8a9f0 0%, #e9d5ff 40%, #b67fe6 100%);
-            --purple-luxe: #5e3a8c;
-            --soft-lavender: #f3eaff;
-            --glass-bg: rgba(255, 245, 255, 0.92);
-            --glass-border: rgba(200, 169, 240, 0.4);
-            --shadow-3d: 0 20px 35px -12px rgba(94, 58, 140, 0.15), 0 0 0 1px rgba(200, 169, 240, 0.3);
-            --hover-lux: 0 30px 45px -15px rgba(94, 58, 140, 0.25), 0 0 0 2px rgba(200, 169, 240, 0.6);
+            --blue-deep: #0a2463;
+            --blue-mid: #1e4db7;
+            --blue-light: #3a7bd5;
+            --orange-vivid: #f97316;
+            --orange-warm: #fb923c;
+            --orange-glow: rgba(249,115,22,0.18);
+            --soft-blue: #eaf2ff;
+            --shadow-3d: 0 20px 35px -12px rgba(10,36,99,0.13), 0 0 0 1px rgba(30,77,183,0.12);
+            --hover-lux: 0 30px 45px -15px rgba(10,36,99,0.22), 0 0 0 2px rgba(249,115,22,0.35);
             --transition-lux: all 0.45s cubic-bezier(0.2, 0.95, 0.4, 1);
         }
-        /* glassmorphic navbar - purple elegance */
+        /* Navbar */
         .navbar-lux {
             backdrop-filter: blur(20px) saturate(200%);
-            background: rgba(95, 60, 135, 0.85);
-            border-bottom: 1px solid rgba(230, 200, 255, 0.4);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            background: rgba(10, 36, 99, 0.93);
+            border-bottom: 1px solid rgba(249,115,22,0.25);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
             padding: 0.65rem 0;
         }
         .navbar-brand-lux {
-            font-weight: 800;
-            font-size: 2rem;
-            background: var(--lavender-gold);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            letter-spacing: -0.02em;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            font-weight: 800; font-size: 2rem;
+            background: linear-gradient(125deg, #fff 0%, #ffb97a 50%, #f97316 100%);
+            -webkit-background-clip: text; background-clip: text; color: transparent;
+            letter-spacing: -0.02em; display: flex; align-items: center; gap: 10px;
         }
-        .navbar-brand-lux i {
-            background: none;
-            color: #f3e5ff;
-            font-size: 2rem;
-            filter: drop-shadow(0 2px 8px rgba(200, 169, 240, 0.6));
-        }
+        .navbar-brand-lux i { background: none; color: #f97316; font-size: 2rem; filter: drop-shadow(0 2px 8px rgba(249,115,22,0.5)); }
         .nav-link-lux {
-            font-weight: 600;
-            color: #f9f2ff !important;
-            transition: var(--transition-lux);
-            margin: 0 6px;
-            border-radius: 60px;
-            padding: 8px 20px;
-            letter-spacing: 0.2px;
+            font-weight: 600; color: #e0eaff !important;
+            transition: var(--transition-lux); margin: 0 4px;
+            border-radius: 60px; padding: 8px 18px; letter-spacing: 0.2px;
         }
-        .nav-link-lux:hover {
-            background: rgba(230, 200, 255, 0.25);
-            color: #ffffff !important;
-            transform: translateY(-2px);
-        }
+        .nav-link-lux:hover { background: rgba(249,115,22,0.2); color: #fff !important; transform: translateY(-2px); }
         .trust-gold {
-            background: rgba(230, 200, 255, 0.3);
-            backdrop-filter: blur(8px);
-            border-radius: 60px;
-            padding: 6px 18px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: #fff0ff;
-            border: 1px solid rgba(230, 200, 255, 0.6);
+            background: rgba(249,115,22,0.2); backdrop-filter: blur(8px);
+            border-radius: 60px; padding: 6px 18px; font-size: 0.75rem;
+            font-weight: 700; color: #ffcfa0; border: 1px solid rgba(249,115,22,0.45);
         }
-        /* Hero - lavender dream with zigzag */
+        /* Hero */
         .hero-luxury {
-            background: radial-gradient(circle at 10% 30%, #6a4e9e, #311c4a);
-            border-radius: 0 0 3rem 3rem;
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 2rem;
-            padding: 3rem 0 3rem;
+            background: radial-gradient(ellipse at 15% 40%, #1e4db7 0%, #0a2463 55%, #06123a 100%);
+            border-radius: 0 0 3rem 3rem; position: relative;
+            overflow: hidden; margin-bottom: 2rem; padding: 3rem 0;
         }
         .hero-luxury::before {
-            content: '';
-            position: absolute;
-            inset: 0;
+            content: ''; position: absolute; inset: 0;
             background: url('https://www.transparenttextures.com/patterns/soft-linen.png');
-            opacity: 0.08;
-            pointer-events: none;
+            opacity: 0.05; pointer-events: none;
         }
-        .kinetic-headline {
-            perspective: 800px;
-            margin-bottom: 1rem;
+        .hero-luxury::after {
+            content: ''; position: absolute;
+            width: 500px; height: 500px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(249,115,22,0.15), transparent 70%);
+            bottom: -150px; right: -80px; pointer-events: none;
         }
+        .kinetic-headline { perspective: 800px; margin-bottom: 1rem; }
         .zigzag-word {
-            display: inline-block;
-            will-change: transform, opacity;
-            font-weight: 800;
-            background: linear-gradient(125deg, #f2e6ff, #e4ccff, #d4b0ff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 2px 15px rgba(200, 169, 240, 0.5);
+            display: inline-block; will-change: transform, opacity; font-weight: 800;
+            background: linear-gradient(125deg, #fff 0%, #ffd5a8 50%, #f97316 100%);
+            -webkit-background-clip: text; background-clip: text; color: transparent;
+            text-shadow: none;
         }
-        .glow-sub {
-            text-shadow: 0 0 12px rgba(230, 200, 255, 0.6);
-            color: #f7f0ff;
-        }
+        .glow-sub { color: #bdd5ff; text-shadow: 0 0 20px rgba(100,160,255,0.4); }
         .search-gold-group {
-            border-radius: 80px;
-            background: rgba(255, 250, 255, 0.98);
-            box-shadow: 0 25px 40px -15px rgba(0,0,0,0.2), 0 0 0 1px rgba(200, 169, 240, 0.5);
+            border-radius: 80px; background: rgba(255,255,255,0.98);
+            box-shadow: 0 25px 40px -15px rgba(0,0,0,0.25), 0 0 0 2px rgba(249,115,22,0.25);
             transition: var(--transition-lux);
         }
         .search-gold-group:focus-within {
-            box-shadow: 0 30px 45px -18px rgba(94, 58, 140, 0.4), 0 0 0 3px rgba(200, 169, 240, 0.7);
+            box-shadow: 0 30px 45px -18px rgba(10,36,99,0.3), 0 0 0 3px rgba(249,115,22,0.5);
             transform: scale(1.01);
         }
         .btn-purple-gradient {
-            background: linear-gradient(115deg, #7c5eb3, #a07ad2);
-            border: none;
-            border-radius: 60px;
-            font-weight: 800;
-            padding: 0.7rem 2rem;
-            color: white;
-            transition: all 0.2s ease;
-            letter-spacing: 0.3px;
+            background: linear-gradient(115deg, #f97316, #fb923c);
+            border: none; border-radius: 60px; font-weight: 800;
+            padding: 0.7rem 2rem; color: white; transition: all 0.2s ease;
         }
+        .btn-purple-gradient:hover { background: linear-gradient(115deg, #ea6c0a, #f97316); transform: scale(1.02); }
         .btn-purple-gradient:active { transform: scale(0.97); }
         .auto-locate-gold {
-            background: rgba(200, 169, 240, 0.25);
-            backdrop-filter: blur(12px);
-            border-radius: 60px;
-            padding: 6px 20px;
-            font-weight: 600;
-            transition: var(--transition-lux);
-            cursor: pointer;
-            border: 0.5px solid rgba(230, 200, 255, 0.7);
-            color: white;
+            background: rgba(255,255,255,0.12); backdrop-filter: blur(12px);
+            border-radius: 60px; padding: 8px 20px; font-weight: 600;
+            transition: var(--transition-lux); cursor: pointer;
+            border: 1px solid rgba(255,255,255,0.3); color: white; font-size: 0.9rem;
         }
+        .auto-locate-gold:hover { background: rgba(249,115,22,0.25); border-color: rgba(249,115,22,0.6); }
+        /* Categories */
         .category-lux {
-            background: rgba(255, 245, 255, 0.85);
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(160, 122, 210, 0.4);
-            border-radius: 60px;
-            padding: 10px 28px;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            color: #2e1a4a;
+            background: rgba(255,255,255,0.9); backdrop-filter: blur(4px);
+            border: 1.5px solid rgba(30,77,183,0.2);
+            border-radius: 60px; padding: 10px 26px; font-weight: 700;
+            transition: all 0.3s ease; color: #0a2463; white-space: nowrap;
         }
         .category-lux i { margin-right: 8px; }
         .category-lux.active {
-            background: linear-gradient(115deg, #9c7ed4, #b48ce6);
-            border: none;
-            color: white;
-            box-shadow: 0 12px 18px -10px rgba(156, 126, 212, 0.5);
-            transform: scale(1.02);
+            background: linear-gradient(115deg, #1e4db7, #3a7bd5);
+            border-color: transparent; color: white;
+            box-shadow: 0 12px 20px -10px rgba(30,77,183,0.4);
+            transform: scale(1.03);
         }
+        /* Property Cards */
         .property-card-lux {
-            background: rgba(255, 250, 255, 0.98);
-            backdrop-filter: blur(0px);
-            border-radius: 2rem;
-            border: 1px solid rgba(160, 122, 210, 0.25);
-            transition: var(--transition-lux);
-            overflow: hidden;
-            box-shadow: var(--shadow-3d);
-            height: 100%;
+            background: #fff; border-radius: 2rem;
+            border: 1.5px solid rgba(30,77,183,0.1);
+            transition: var(--transition-lux); overflow: hidden;
+            box-shadow: var(--shadow-3d); height: 100%;
         }
         .property-card-lux:hover {
-            transform: translateY(-12px) scale(1.01);
-            box-shadow: var(--hover-lux);
-            border-color: rgba(160, 122, 210, 0.7);
+            transform: translateY(-10px) scale(1.01);
+            box-shadow: var(--hover-lux); border-color: rgba(249,115,22,0.4);
         }
-        .img-zoom-wrapper {
-            overflow: hidden;
-            position: relative;
-        }
+        .img-zoom-wrapper { overflow: hidden; position: relative; }
         .img-zoom-wrapper img {
             transition: transform 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.2);
-            height: 240px;
-            object-fit: cover;
-            width: 100%;
+            height: 220px; object-fit: cover; width: 100%;
         }
-        .property-card-lux:hover .img-zoom-wrapper img {
-            transform: scale(1.07);
-        }
+        .property-card-lux:hover .img-zoom-wrapper img { transform: scale(1.07); }
         .verified-lux-badge {
-            position: absolute;
-            top: 16px;
-            left: 16px;
-            background: linear-gradient(105deg, #c8a9f0, #e2c5ff);
-            color: #2c1a42;
-            font-weight: 800;
-            font-size: 0.7rem;
-            padding: 6px 18px;
-            border-radius: 40px;
-            backdrop-filter: blur(2px);
-            z-index: 12;
-            letter-spacing: 0.5px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+            position: absolute; top: 14px; left: 14px;
+            background: linear-gradient(105deg, #f97316, #fb923c);
+            color: white; font-weight: 800; font-size: 0.68rem;
+            padding: 5px 14px; border-radius: 40px; z-index: 12;
+            letter-spacing: 0.5px; box-shadow: 0 3px 12px rgba(249,115,22,0.45);
         }
         .price-lux {
-            font-size: 1.55rem;
-            font-weight: 800;
-            background: linear-gradient(125deg, #7c5eb3, #b48ce6);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            font-size: 1.5rem; font-weight: 800;
+            background: linear-gradient(125deg, #0a2463, #1e4db7);
+            -webkit-background-clip: text; background-clip: text; color: transparent;
         }
         .btn-book-lux {
-            background: linear-gradient(115deg, #2e1a4a, #4e2f77);
-            border: none;
-            border-radius: 40px;
-            font-weight: 700;
-            padding: 8px 22px;
-            transition: all 0.25s;
-            color: #f3e5ff;
+            background: linear-gradient(115deg, #0a2463, #1e4db7);
+            border: none; border-radius: 40px; font-weight: 700;
+            padding: 8px 20px; transition: all 0.25s; color: white; font-size: 0.88rem;
         }
-        .btn-book-lux:hover {
-            background: linear-gradient(115deg, #b48ce6, #9c7ed4);
-            color: #1f0f33;
-            transform: scale(1.02);
+        .btn-book-lux:hover { background: linear-gradient(115deg, #f97316, #fb923c); transform: scale(1.03); }
+        /* Share button on cards */
+        .btn-share-card {
+            background: rgba(249,115,22,0.08); border: 1.5px solid rgba(249,115,22,0.35);
+            border-radius: 40px; font-weight: 700; padding: 7px 14px;
+            transition: all 0.22s; color: #f97316; font-size: 0.82rem; cursor: pointer;
         }
+        .btn-share-card:hover { background: rgba(249,115,22,0.18); transform: scale(1.05); }
+        .btn-share-card.copied { background: rgba(22,163,74,0.1); border-color: rgba(22,163,74,0.4); color: #16a34a; }
+        /* Card action row */
+        .card-action-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+        /* Shimmer */
         .shimmer-lux {
-            background: linear-gradient(110deg, #e9dcf5 8%, #f7efff 18%, #e9dcf5 33%);
-            background-size: 200% 100%;
-            animation: shimmerMove 1.2s linear infinite;
+            background: linear-gradient(110deg, #ddeeff 8%, #eef5ff 18%, #ddeeff 33%);
+            background-size: 200% 100%; animation: shimmerMove 1.2s linear infinite;
         }
-        @keyframes shimmerMove {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
-        }
+        @keyframes shimmerMove { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+        /* Footer */
         .footer-lux {
-            background: #1f1333;
-            color: #ddd0f0;
-            margin-top: 4rem;
-            border-top: 1px solid rgba(200, 169, 240, 0.3);
+            background: #060f2e; color: #b8ccee;
+            margin-top: 4rem; border-top: 2px solid rgba(249,115,22,0.2);
         }
-        .social-lux i {
-            font-size: 1.6rem;
-            transition: 0.2s;
-            color: #c8b0e6;
-            margin-right: 20px;
-            cursor: pointer;
-        }
-        .social-lux i:hover { transform: translateY(-5px); color: #e9d5ff; }
+        .social-lux i { font-size: 1.6rem; transition: 0.2s; color: #6b9fe0; margin-right: 20px; cursor: pointer; }
+        .social-lux i:hover { transform: translateY(-5px); color: #f97316; }
         @media (max-width: 768px) {
             .hero-luxury { padding: 2rem 1rem; }
-            .category-lux { padding: 6px 18px; font-size: 0.8rem; }
-            .zigzag-word { font-size: 1.8rem; display: inline-block; }
+            .category-lux { padding: 6px 16px; font-size: 0.8rem; }
+            .zigzag-word { font-size: 1.8rem; }
         }
-        /* modal purple accent */
+        /* Modal header */
         .modal-purple-header {
-            background: linear-gradient(95deg, #3a2660, #5a3f85);
-            color: #f3eaff;
+            background: linear-gradient(95deg, #0a2463, #1e4db7);
+            color: #e0eaff;
         }
+        /* Location Nav */
+        .btn-loc-pick {
+            background: rgba(255,255,255,0.12); backdrop-filter: blur(12px);
+            border-radius: 60px; padding: 8px 20px; font-weight: 700;
+            transition: var(--transition-lux); cursor: pointer;
+            border: 1px solid rgba(255,255,255,0.28); color: white; font-size: 0.9rem;
+        }
+        .btn-loc-pick:hover { background: rgba(249,115,22,0.25); border-color: rgba(249,115,22,0.55); color: white; }
+        .dropdown-menu-lux {
+            border-radius: 1rem; border: 1px solid rgba(30,77,183,0.2);
+            min-width: 200px; background: rgba(255,255,255,0.99);
+            backdrop-filter: blur(10px);
+        }
+        .dropdown-item.loc-item { border-radius: 0.5rem; font-size: 0.9rem; transition: 0.2s; color: #0a2463; }
+        .dropdown-item.loc-item:hover { background: rgba(30,77,183,0.08); color: #1e4db7; }
+        .radius-slider-wrap {
+            background: rgba(255,255,255,0.1); border-radius: 60px;
+            padding: 6px 18px; border: 1px solid rgba(255,255,255,0.2);
+        }
+        .radius-range { -webkit-appearance: none; height: 4px; border-radius: 4px; background: rgba(249,115,22,0.35); outline: none; min-width: 100px; }
+        .radius-range::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%; background: #f97316; cursor: pointer; box-shadow: 0 2px 8px rgba(249,115,22,0.4); }
+        /* About Section */
+        .about-section {
+            background: linear-gradient(135deg, #eaf2ff 0%, #d6e8ff 100%);
+            border-radius: 2.5rem; padding: 4rem 2rem; margin: 3rem 0;
+            position: relative; overflow: hidden;
+        }
+        .about-section::before {
+            content: ''; position: absolute; top: -50px; right: -50px;
+            width: 260px; height: 260px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(249,115,22,0.15), transparent 70%);
+        }
+        .about-stat-card {
+            background: white; border-radius: 1.5rem; padding: 1.5rem; text-align: center;
+            box-shadow: 0 8px 24px -10px rgba(10,36,99,0.12);
+            border: 1.5px solid rgba(30,77,183,0.1); transition: var(--transition-lux);
+        }
+        .about-stat-card:hover { transform: translateY(-6px); box-shadow: 0 18px 30px -12px rgba(10,36,99,0.2); }
+        .about-stat-num { font-size: 2.5rem; font-weight: 900; background: linear-gradient(125deg, #f97316, #fb923c); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        /* Blog */
+        .blog-section { margin: 3rem 0; }
+        .blog-card-lux {
+            background: white; border-radius: 2rem; overflow: hidden;
+            box-shadow: var(--shadow-3d); border: 1.5px solid rgba(30,77,183,0.1);
+            transition: var(--transition-lux); height: 100%;
+        }
+        .blog-card-lux:hover { transform: translateY(-8px); box-shadow: var(--hover-lux); }
+        .blog-tag { background: linear-gradient(115deg, #1e4db7, #3a7bd5); color: white; font-size: 0.7rem; font-weight: 800; padding: 4px 14px; border-radius: 40px; display: inline-block; margin-bottom: 0.75rem; }
+        .blog-img-wrap { height: 180px; overflow: hidden; }
+        .blog-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .blog-card-lux:hover .blog-img-wrap img { transform: scale(1.06); }
+        /* Coupon Section */
+        .coupon-section {
+            background: linear-gradient(125deg, #06123a 0%, #0a2463 60%, #1e4db7 100%);
+            border-radius: 2rem; padding: 3rem 2rem; margin: 3rem 0;
+            position: relative; overflow: hidden; color: white;
+        }
+        .coupon-section::after {
+            content: '🎟️'; position: absolute; font-size: 8rem;
+            right: 2rem; top: 50%; transform: translateY(-50%); opacity: 0.07;
+        }
+        .coupon-input-wrap { background: rgba(255,255,255,0.1); border-radius: 60px; padding: 6px 6px 6px 18px; display: flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.2); max-width: 420px; }
+        .coupon-input { background: transparent; border: none; outline: none; color: white; font-weight: 600; font-size: 0.95rem; flex: 1; letter-spacing: 1px; }
+        .coupon-input::placeholder { color: rgba(255,255,255,0.45); letter-spacing: 0; }
+        .btn-apply-coupon { background: linear-gradient(115deg, #f97316, #fb923c); border: none; border-radius: 50px; padding: 8px 22px; font-weight: 800; color: white; transition: 0.2s; white-space: nowrap; }
+        .btn-apply-coupon:hover { transform: scale(1.03); filter: brightness(1.1); }
+        .coupon-result { margin-top: 0.75rem; font-weight: 700; min-height: 24px; font-size: 0.9rem; }
+        /* Modal coupon */
+        .modal-coupon-row { background: #f0f6ff; border-radius: 1rem; padding: 14px 16px; border: 1.5px dashed rgba(30,77,183,0.25); margin-top: 16px; }
+        .modal-coupon-row .coupon-input-wrap { background: white; border: 1px solid rgba(30,77,183,0.2); max-width: 100%; }
+        .modal-coupon-row .coupon-input { color: #0a2463; }
+        .modal-coupon-row .coupon-input::placeholder { color: rgba(10,36,99,0.35); }
+        .discount-applied-badge { display: inline-block; background: linear-gradient(115deg, #dcfce7, #bbf7d0); color: #15803d; font-weight: 800; font-size: 0.78rem; padding: 4px 12px; border-radius: 30px; border: 1px solid rgba(21,128,61,0.3); }
     </style>
 </head>
 <body>
@@ -283,9 +277,10 @@
         </button>
         <div class="collapse navbar-collapse" id="luxNavbar">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a class="nav-link nav-link-lux" href="#"><i class="bi bi-building"></i> Estates</a></li>
-                <li class="nav-item"><a class="nav-link nav-link-lux" href="#listings"><i class="bi bi-grid-3x3-gap-fill"></i> Residences</a></li>
-                <li class="nav-item"><a class="nav-link nav-link-lux" href="#"><i class="bi bi-shield-check"></i> Concierge</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-lux" href="#listings"><i class="bi bi-grid-3x3-gap-fill"></i> Listings</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-lux" href="#about"><i class="bi bi-info-circle"></i> About</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-lux" href="#blog"><i class="bi bi-newspaper"></i> Blog</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-lux" href="#coupon"><i class="bi bi-ticket-perforated"></i> Offers</a></li>
                 <li class="nav-item"><a class="nav-link nav-link-lux" href="#"><i class="bi bi-person-circle"></i> Account</a></li>
             </ul>
             <div class="trust-gold">
@@ -309,7 +304,7 @@
                 <span class="zigzag-word" data-word="Infinite">Infinite</span>
                 <span class="zigzag-word" data-word="Luxury.">Luxury.</span>
             </h1>
-            <p class="lead glow-sub mt-3" id="subline">Curated PG, Homestays, Flats & Roommates in Guwahati. Verified, Seamless, Opulent.</p>
+            <p class="lead glow-sub mt-3" id="subline">Verified PG, Rooms, Flats & Homestays in Guwahati · 0% Brokerage, 100% Trusted.</p>
         </div>
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-7">
@@ -320,14 +315,46 @@
                     <button class="btn-purple-gradient" id="luxSearchBtn"><i class="bi bi-search-heart"></i> Search</button>
                 </div>
                 <div class="d-flex justify-content-between mt-4 align-items-center flex-wrap gap-2">
-                    <div class="auto-locate-gold" id="luxAutoLocate">
-                        <i class="bi bi-satellite"></i> Auto-detect my location
+                    <!-- Popular Location Picker -->
+                    <div class="location-nav-panel" id="locationNavPanel">
+                        <div class="d-flex align-items-center gap-2 flex-wrap">
+                            <div class="dropdown">
+                                <button class="btn-loc-pick dropdown-toggle" type="button" data-bs-toggle="dropdown" id="locationDropBtn">
+                                    <i class="bi bi-geo-alt-fill"></i> <span id="locationLabel">Prime Locations</span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-lux shadow-lg">
+                                    <li><h6 class="dropdown-header text-muted"><i class="bi bi-star-fill text-warning"></i> Popular in Guwahati</h6></li>
+                                    <li><a class="dropdown-item loc-item" data-loc="GS Road" href="#"><i class="bi bi-building"></i> GS Road</a></li>
+                                    <li><a class="dropdown-item loc-item" data-loc="Uzan Bazar" href="#"><i class="bi bi-water"></i> Uzan Bazar</a></li>
+                                    <li><a class="dropdown-item loc-item" data-loc="Panbazar" href="#"><i class="bi bi-shop"></i> Panbazar</a></li>
+                                    <li><a class="dropdown-item loc-item" data-loc="Dispur" href="#"><i class="bi bi-bank2"></i> Dispur</a></li>
+                                    <li><a class="dropdown-item loc-item" data-loc="Beltola" href="#"><i class="bi bi-tree-fill"></i> Beltola</a></li>
+                                    <li><a class="dropdown-item loc-item" data-loc="Fancy Bazar" href="#"><i class="bi bi-bag-heart"></i> Fancy Bazar</a></li>
+                                    <li><a class="dropdown-item loc-item" data-loc="Zoo Road" href="#"><i class="bi bi-flower2"></i> Zoo Road</a></li>
+                                    <li><a class="dropdown-item loc-item" data-loc="Jayanagar" href="#"><i class="bi bi-houses-fill"></i> Jayanagar</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item loc-item fw-bold" data-loc="" href="#"><i class="bi bi-x-circle"></i> Clear Filter</a></li>
+                                </ul>
+                            </div>
+                            <button class="auto-locate-gold" id="luxAutoLocate">
+                                <i class="bi bi-crosshair2"></i> My Location
+                            </button>
+                        </div>
+                        <!-- Radius Slider -->
+                        <div class="radius-slider-wrap mt-2" id="radiusSliderWrap" style="display:none;">
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="bi bi-broadcast" style="color:#f97316;"></i>
+                                <span class="small text-white fw-semibold">Radius:</span>
+                                <input type="range" id="radiusSlider" min="0.5" max="10" step="0.5" value="2" class="radius-range flex-grow-1">
+                                <span class="badge bg-light text-dark fw-bold" id="radiusLabel">2 km</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="d-flex gap-2 bg-white rounded-pill p-1 shadow-sm">
                         <input type="number" id="luxMinPrice" placeholder="Min ₹" style="width: 90px;" class="border-0 form-control-sm rounded-pill">
                         <span>-</span>
                         <input type="number" id="luxMaxPrice" placeholder="Max ₹" style="width: 90px;" class="border-0 form-control-sm rounded-pill">
-                        <button id="luxPriceFilter" class="btn btn-sm rounded-pill" style="background:#c8a9f0; color:#2e1a4a; font-weight:600;">Apply</button>
+                        <button id="luxPriceFilter" class="btn btn-sm rounded-pill" style="background: linear-gradient(115deg,#f97316,#fb923c); color:white; font-weight:700; border:none;">Apply</button>
                     </div>
                 </div>
             </div>
@@ -341,7 +368,7 @@
         <button class="category-lux" data-category="PG"><i class="bi bi-building"></i> PG Luxury</button>
         <button class="category-lux" data-category="Homestay"><i class="bi bi-flower1"></i> Homestay</button>
         <button class="category-lux" data-category="Flat"><i class="bi bi-door-closed-fill"></i> Flats</button>
-        <button class="category-lux" data-category="Roommate"><i class="bi bi-people-fill"></i> Roommate Elite</button>
+        <button class="category-lux" data-category="Roommate"><i class="bi bi-door-open-fill"></i> Rooms for Rent</button>
     </div>
 
     <div id="luxSkeleton" class="row g-4" style="display: none;">
@@ -351,43 +378,179 @@
     </div>
 
     <div id="luxPropertiesGrid" class="row g-4"></div>
-    <div id="luxNoResults" class="text-center py-5 d-none"><i class="bi bi-emoji-frown fs-1" style="color:#a07ad2;"></i><p class="mt-3 fw-semibold">No estates found — refine your filters ✨</p></div>
+    <div id="luxNoResults" class="text-center py-5 d-none"><i class="bi bi-emoji-frown fs-1" style="color:#1e4db7;"></i><p class="mt-3 fw-semibold">No properties found — try a different filter or location.</p></div>
 
     <div class="mt-5 pt-4" id="recentSectionLux">
-        <hr class="my-4 opacity-25" style="border-color:#c8a9f0;">
-        <div class="d-flex align-items-center gap-2 mb-4"><i class="bi bi-clock-history fs-3" style="color:#a07ad2;"></i><h3 class="mb-0 fw-bold">Recently Visited Estates</h3></div>
+        <hr class="my-4 opacity-25" style="border-color:#1e4db7;">
+        <div class="d-flex align-items-center gap-2 mb-4"><i class="bi bi-clock-history fs-3" style="color:#1e4db7;"></i><h3 class="mb-0 fw-bold">Recently Viewed</h3></div>
         <div id="luxRecentGrid" class="row g-4"></div>
     </div>
 </main>
 
+<!-- ABOUT SECTION -->
+<section class="container" id="about">
+    <div class="about-section">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <span class="blog-tag mb-3"><i class="bi bi-info-circle-fill"></i> About Us</span>
+                <h2 class="fw-bold mb-3" style="color:#0a2463; font-size:2.2rem;">Guwahati's Most Trusted <span style="background: linear-gradient(125deg, #f97316, #fb923c); -webkit-background-clip:text; background-clip:text; color:transparent;">Zero-Brokerage</span> Platform</h2>
+                <p class="text-secondary mb-3" style="line-height:1.8;">ApnaRooms was born from a simple belief: finding a home in Guwahati should be effortless, affordable, and transparent. We connect tenants directly with verified landlords — no middlemen, no hidden fees, no stress.</p>
+                <p class="text-secondary mb-4" style="line-height:1.8;">Whether you're a student moving to the city, a working professional seeking premium PG, or a family searching for the perfect flat — ApnaRooms has you covered with 500+ curated listings across all prime Guwahati locations.</p>
+                <div class="d-flex gap-3 flex-wrap">
+                    <span class="badge rounded-pill py-2 px-3" style="background:rgba(30,77,183,0.1); color:#1e4db7; font-size:0.85rem;"><i class="bi bi-shield-check-fill"></i> AI Verified</span>
+                    <span class="badge rounded-pill py-2 px-3" style="background:rgba(30,77,183,0.1); color:#1e4db7; font-size:0.85rem;"><i class="bi bi-percent"></i> 0% Brokerage</span>
+                    <span class="badge rounded-pill py-2 px-3" style="background:rgba(30,77,183,0.1); color:#1e4db7; font-size:0.85rem;"><i class="bi bi-headset"></i> 24/7 Support</span>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="row g-3">
+                    <div class="col-6"><div class="about-stat-card"><div class="about-stat-num">500+</div><div class="fw-semibold text-secondary">Property Listings</div></div></div>
+                    <div class="col-6"><div class="about-stat-card"><div class="about-stat-num">98%</div><div class="fw-semibold text-secondary">Happy Tenants</div></div></div>
+                    <div class="col-6"><div class="about-stat-card"><div class="about-stat-num">0%</div><div class="fw-semibold text-secondary">Brokerage Fee</div></div></div>
+                    <div class="col-6"><div class="about-stat-card"><div class="about-stat-num">12+</div><div class="fw-semibold text-secondary">Prime Localities</div></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COUPON / REFERRAL CODE SECTION -->
+<section class="container" id="coupon">
+    <div class="coupon-section">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-6">
+                <h3 class="fw-bold mb-2"><i class="bi bi-gift-fill me-2"></i>Have a Coupon or Referral Code?</h3>
+                <p class="opacity-75 mb-3">Apply your coupon to get exclusive discounts on token booking. Refer a friend and both of you save!</p>
+                <div class="coupon-input-wrap">
+                    <i class="bi bi-ticket-perforated-fill" style="color:#f97316; font-size:1.2rem;"></i>
+                    <input type="text" class="coupon-input" id="couponInput" placeholder="Enter coupon or referral code" maxlength="20">
+                    <button class="btn-apply-coupon" id="applyCouponBtn">Apply</button>
+                </div>
+                <div class="coupon-result" id="couponResult"></div>
+            </div>
+            <div class="col-lg-6">
+                <div class="p-3 rounded-3" style="background:rgba(255,255,255,0.08); border:1px solid rgba(249,115,22,0.25);">
+                    <h5 class="fw-bold mb-3"><i class="bi bi-people-fill me-2"></i>Refer & Earn</h5>
+                    <p class="opacity-75 mb-3 small">Share your unique referral code with friends. When they book their first property, you both get ₹500 off!</p>
+                    <div class="d-flex align-items-center gap-2">
+                        <div class="coupon-input-wrap flex-grow-1" style="background:rgba(255,255,255,0.06);">
+                            <i class="bi bi-link-45deg" style="color:#f97316;"></i>
+                            <input type="text" class="coupon-input" id="myReferralCode" value="APNA-USER-1234" readonly style="letter-spacing:2px; font-size:0.85rem;">
+                            <button class="btn-apply-coupon" id="copyReferralBtn" onclick="copyReferral()">Copy</button>
+                        </div>
+                    </div>
+                    <p class="small mt-2 opacity-50">Your referral code · Share via WhatsApp, Instagram, or SMS</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BLOG SECTION -->
+<section class="container blog-section" id="blog">
+    <div class="d-flex align-items-center justify-content-between mb-4">
+        <div>
+            <span class="blog-tag"><i class="bi bi-newspaper"></i> Our Blog</span>
+            <h2 class="fw-bold mt-1" style="color:#0a2463;">Insights & Housing Tips</h2>
+        </div>
+        <a href="#" class="btn btn-outline-secondary rounded-pill px-4 d-none d-md-block">View All <i class="bi bi-arrow-right"></i></a>
+    </div>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="blog-card-lux">
+                <div class="blog-img-wrap"><img src="https://picsum.photos/id/251/500/300" alt="Blog 1" loading="lazy"></div>
+                <div class="p-4">
+                    <span class="blog-tag">Tenant Tips</span>
+                    <h5 class="fw-bold mb-2" style="color:#0a2463;">5 Things to Check Before Renting a PG in Guwahati</h5>
+                    <p class="text-secondary small">From safety locks to water supply, here's what every smart tenant verifies before signing the rental agreement.</p>
+                    <div class="d-flex align-items-center gap-2 mt-3"><img src="https://picsum.photos/id/60/32/32" class="rounded-circle" style="width:30px;height:30px;object-fit:cover;"><span class="small text-muted">By ApnaRooms Team · 5 min read</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="blog-card-lux">
+                <div class="blog-img-wrap"><img src="https://picsum.photos/id/188/500/300" alt="Blog 2" loading="lazy"></div>
+                <div class="p-4">
+                    <span class="blog-tag">Market Trends</span>
+                    <h5 class="fw-bold mb-2" style="color:#0a2463;">Rental Prices in Guwahati 2025: Area-by-Area Breakdown</h5>
+                    <p class="text-secondary small">GS Road vs Dispur vs Beltola — where should you rent? Our data team breaks down average prices across all major areas.</p>
+                    <div class="d-flex align-items-center gap-2 mt-3"><img src="https://picsum.photos/id/64/32/32" class="rounded-circle" style="width:30px;height:30px;object-fit:cover;"><span class="small text-muted">By Data Desk · 8 min read</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="blog-card-lux">
+                <div class="blog-img-wrap"><img src="https://picsum.photos/id/225/500/300" alt="Blog 3" loading="lazy"></div>
+                <div class="p-4">
+                    <span class="blog-tag">Legal Guide</span>
+                    <h5 class="fw-bold mb-2" style="color:#0a2463;">Rental Agreement in Assam: What You Must Know in 2025</h5>
+                    <p class="text-secondary small">Security deposit limits, notice periods, and tenant rights explained in plain language for Guwahati renters.</p>
+                    <div class="d-flex align-items-center gap-2 mt-3"><img src="https://picsum.photos/id/68/32/32" class="rounded-circle" style="width:30px;height:30px;object-fit:cover;"><span class="small text-muted">By Legal Cell · 6 min read</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <footer class="footer-lux pt-5 pb-4">
     <div class="container">
         <div class="row g-4">
-            <div class="col-md-4"><h5 class="fw-bold mb-3" style="color:#d9c2ff;"><i class="bi bi-house-door-fill"></i> ApnaRooms</h5><p class="small opacity-75">Luxury rental ecosystem · 0% brokerage · AI verified homes in Guwahati.</p><div class="social-lux d-flex"><i class="bi bi-instagram"></i><i class="bi bi-whatsapp"></i><i class="bi bi-twitter-x"></i><i class="bi bi-facebook"></i></div></div>
-            <div class="col-md-4"><h5 class="fw-bold mb-3" style="color:#d9c2ff;">Concierge</h5><ul class="list-unstyled small"><li><a href="#" class="text-white-50 text-decoration-none">🏛️ Prestige Listings</a></li><li><a href="#" class="text-white-50 text-decoration-none">🔐 Safety Vault</a></li><li><a href="#" class="text-white-50 text-decoration-none">📜 Terms of Opulence</a></li><li><a href="#" class="text-white-50 text-decoration-none">🌟 Privacy</a></li></ul></div>
-            <div class="col-md-4"><h5 class="fw-bold mb-3" style="color:#d9c2ff;">White Glove Support</h5><p><i class="bi bi-envelope-paper"></i> royal@apnarooms.com</p><p><i class="bi bi-geo-alt-fill"></i> GS Road, Guwahati · 781005</p><button id="luxSupportBtn" class="btn btn-outline-light btn-sm rounded-pill"><i class="bi bi-headset"></i> 24K Helpline</button></div>
+            <div class="col-md-4"><h5 class="fw-bold mb-3" style="color:#7ab3f5;"><i class="bi bi-house-door-fill" style="color:#f97316;"></i> ApnaRooms</h5><p class="small opacity-75">Zero-brokerage rental platform · AI verified homes in Guwahati · Trusted by 10,000+ tenants.</p><div class="social-lux d-flex"><i class="bi bi-instagram"></i><i class="bi bi-whatsapp"></i><i class="bi bi-twitter-x"></i><i class="bi bi-facebook"></i></div></div>
+            <div class="col-md-4"><h5 class="fw-bold mb-3" style="color:#7ab3f5;">Quick Links</h5><ul class="list-unstyled small"><li><a href="#listings" class="text-white-50 text-decoration-none">🏠 Property Listings</a></li><li><a href="#about" class="text-white-50 text-decoration-none">ℹ️ About Us</a></li><li><a href="#blog" class="text-white-50 text-decoration-none">📰 Blog</a></li><li><a href="#coupon" class="text-white-50 text-decoration-none">🎟️ Offers & Coupons</a></li></ul></div>
+            <div class="col-md-4"><h5 class="fw-bold mb-3" style="color:#7ab3f5;">Support</h5><p><i class="bi bi-envelope-paper" style="color:#f97316;"></i> hello@apnarooms.com</p><p><i class="bi bi-geo-alt-fill" style="color:#f97316;"></i> GS Road, Guwahati · 781005</p><button id="luxSupportBtn" class="btn btn-sm rounded-pill mt-1" style="border:1px solid rgba(249,115,22,0.5);color:#fb923c;"><i class="bi bi-headset"></i> 24/7 Helpline</button></div>
         </div>
         <hr class="mt-4 opacity-25"><div class="text-center small opacity-50">© 2025 ভাড়াঘৰ — Ultra-luxury PropTech. Zero Brokerage, Infinite Trust.</div>
     </div>
 </footer>
 
-<!-- MODAL with purple theme -->
+<!-- BOOKING MODAL -->
 <div class="modal fade" id="luxBookingModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content rounded-5 border-0 shadow-xxl" style="background: #ffffffec; backdrop-filter: blur(2px);">
+        <div class="modal-content rounded-5 border-0 shadow-xxl" style="background:#fff;">
             <div class="modal-header modal-purple-header" style="border-radius: 1.5rem 1.5rem 0 0;">
-                <h5 class="modal-title fw-bold"><i class="bi bi-diamond-fill"></i> Secure Token Booking</h5>
+                <h5 class="modal-title fw-bold"><i class="bi bi-shield-check-fill me-2"></i> Secure Token Booking</h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body p-4">
                 <div id="luxModalRoomInfo" class="mb-3 fs-5 fw-semibold"></div>
                 <div class="booking-summary bg-light p-3 rounded-4 border">
-                    <div class="d-flex justify-content-between"><span>💎 Monthly Rent:</span><span id="luxModalRent" class="fw-bold" style="color:#a07ad2;">₹0</span></div>
+                    <div class="d-flex justify-content-between"><span>🏠 Monthly Rent:</span><span id="luxModalRent" class="fw-bold" style="color:#1e4db7;">₹0</span></div>
                     <div class="d-flex justify-content-between mt-2"><span>🏷️ Token Fee (10% of Rent):</span><span id="luxModalToken" class="fw-bold">₹0</span></div>
-                    <hr><div class="d-flex justify-content-between"><span>✨ Total Payable:</span><span id="luxModalTotal" class="fw-bold fs-4" style="color:#7c5eb3;">₹0</span></div>
+                    <div id="luxDiscountRow" style="display:none;" class="d-flex justify-content-between mt-2 text-success fw-semibold">
+                        <span id="luxDiscountLabel">🎟️ Coupon:</span>
+                        <span id="luxDiscountAmt">-₹0</span>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="fw-bold">✨ Total Payable:</span>
+                        <div class="d-flex align-items-center gap-2">
+                            <span id="luxModalOrigTotal" class="text-muted text-decoration-line-through small" style="display:none;"></span>
+                            <span id="luxModalTotal" class="fw-bold fs-4" style="color:#f97316;">₹0</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="mt-4"><label class="fw-semibold">📅 Availability Simulation</label><select id="luxAvailabilitySelect" class="form-select mt-1 rounded-pill"><option value="available">✅ Available — Instantly Bookable</option><option value="unavailable">❌ Unavailable (demo)</option></select><div id="luxAvailMsg" class="small text-danger mt-1"></div>
-                <button id="luxConfirmPay" class="btn w-100 mt-4 py-2 rounded-pill" style="background: linear-gradient(115deg, #9c7ed4, #b48ce6); font-weight:800; color:white;">💳 Simulate Payment Gateway</button></div>
+                <!-- Coupon inside checkout -->
+                <div class="modal-coupon-row">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <i class="bi bi-ticket-perforated-fill" style="color:#1e4db7;"></i>
+                        <span class="fw-bold text-dark small">Have a coupon or referral code?</span>
+                        <span id="modalCouponBadge" class="discount-applied-badge" style="display:none;"></span>
+                    </div>
+                    <div class="coupon-input-wrap">
+                        <input type="text" class="coupon-input" id="modalCouponInput" placeholder="WELCOME10 · APNA500 · STUDENT20" maxlength="20">
+                        <button class="btn-apply-coupon" id="modalApplyCouponBtn" style="font-size:0.85rem; padding:7px 16px;">Apply</button>
+                    </div>
+                    <div class="coupon-result small mt-1" id="modalCouponResult" style="color:#0a2463;min-height:18px;"></div>
+                </div>
+                <div class="mt-4">
+                    <label class="fw-semibold">📅 Availability</label>
+                    <select id="luxAvailabilitySelect" class="form-select mt-1 rounded-pill">
+                        <option value="available">✅ Available — Instantly Bookable</option>
+                        <option value="unavailable">❌ Unavailable (demo)</option>
+                    </select>
+                    <div id="luxAvailMsg" class="small text-danger mt-1"></div>
+                    <button id="luxConfirmPay" class="btn w-100 mt-4 py-2 rounded-pill fw-bold" style="background:linear-gradient(115deg,#f97316,#fb923c);color:white;font-size:1.05rem;border:none;">💳 Simulate Payment Gateway</button>
+                </div>
             </div>
         </div>
     </div>
@@ -436,11 +599,11 @@
         { id: 1, name: "The Golden Arc PG (Boys)", location: "Uzan Bazar", price: 7500, verified: true, category: "PG", img: "https://picsum.photos/id/164/500/350", img2: "https://picsum.photos/id/169/500/350", img3: "https://picsum.photos/id/175/500/350" },
         { id: 2, name: "Brahmaputra Heritage Homestay", location: "Panbazar", price: 12000, verified: true, category: "Homestay", img: "https://picsum.photos/id/20/500/350", img2: "https://picsum.photos/id/22/500/350", img3: "https://picsum.photos/id/28/500/350" },
         { id: 3, name: "Emerald Valley Flat", location: "Dispur", price: 18500, verified: true, category: "Flat", img: "https://picsum.photos/id/106/500/350", img2: "https://picsum.photos/id/108/500/350", img3: "https://picsum.photos/id/112/500/350" },
-        { id: 4, name: "Roommate Elite - Tech Professional", location: "GS Road", price: 8000, verified: true, category: "Roommate", img: "https://picsum.photos/id/152/500/350", img2: "https://picsum.photos/id/155/500/350", img3: "https://picsum.photos/id/159/500/350" },
+        { id: 4, name: "Room for Rent - Tech Professional Zone", location: "GS Road", price: 8000, verified: true, category: "Roommate", img: "https://picsum.photos/id/152/500/350", img2: "https://picsum.photos/id/155/500/350", img3: "https://picsum.photos/id/159/500/350" },
         { id: 5, name: "Velvet Suites PG for Women", location: "Beltola", price: 9500, verified: true, category: "PG", img: "https://picsum.photos/id/29/500/350", img2: "https://picsum.photos/id/39/500/350", img3: "https://picsum.photos/id/42/500/350" },
         { id: 6, name: "Riverside Opus Homestay", location: "Fancy Bazar", price: 14500, verified: false, category: "Homestay", img: "https://picsum.photos/id/96/500/350", img2: "https://picsum.photos/id/98/500/350", img3: "https://picsum.photos/id/100/500/350" },
         { id: 7, name: "2BHK Grandeur Flat", location: "Zoo Road", price: 22000, verified: true, category: "Flat", img: "https://picsum.photos/id/177/500/350", img2: "https://picsum.photos/id/179/500/350", img3: "https://picsum.photos/id/190/500/350" },
-        { id: 8, name: "Roommate - Student Royal", location: "Jayanagar", price: 5500, verified: true, category: "Roommate", img: "https://picsum.photos/id/202/500/350", img2: "https://picsum.photos/id/205/500/350", img3: "https://picsum.photos/id/210/500/350" }
+        { id: 8, name: "Room for Rent - Student Friendly", location: "Jayanagar", price: 5500, verified: true, category: "Roommate", img: "https://picsum.photos/id/202/500/350", img2: "https://picsum.photos/id/205/500/350", img3: "https://picsum.photos/id/210/500/350" }
     ];
 
     let currentFiltered = [...properties];
@@ -456,7 +619,7 @@
         const container = document.getElementById("luxRecentGrid"); if(!container) return;
         if(recentList.length === 0) { container.innerHTML = `<div class="col-12 text-center text-muted"><i class="bi bi-eye-off"></i> No estates viewed recently.</div>`; return; }
         let html = '';
-        recentList.forEach(p => { html += `<div class="col-md-4 col-lg-3"><div class="property-card-lux"><div class="img-zoom-wrapper"><img src="${p.img}" class="w-100" style="height:140px;object-fit:cover;"></div><div class="p-2"><h6 class="fw-bold">${p.name}</h6><p class="small text-muted">${p.location}</p><button class="btn btn-sm rounded-pill recent-view-lux" data-id="${p.id}" style="background:#c8a9f0; color:#2e1a4a; font-weight:600;">View again</button></div></div></div>`; });
+        recentList.forEach(p => { html += `<div class="col-md-4 col-lg-3"><div class="property-card-lux"><div class="img-zoom-wrapper"><img src="${p.img}" class="w-100" style="height:140px;object-fit:cover;"></div><div class="p-2"><h6 class="fw-bold">${p.name}</h6><p class="small text-muted">${p.location}</p><button class="btn btn-sm rounded-pill recent-view-lux" data-id="${p.id}" style="background:linear-gradient(115deg,#1e4db7,#3a7bd5); color:white; font-weight:700; border:none;">View again</button></div></div></div>`; });
         container.innerHTML = html;
         document.querySelectorAll('.recent-view-lux').forEach(btn => btn.addEventListener('click', (e) => { const prop = properties.find(p => p.id == btn.dataset.id); if(prop) openLuxBooking(prop); }));
     }
@@ -478,8 +641,8 @@
         let html = '';
         propList.forEach(prop => {
             const isRoommate = prop.category === "Roommate";
-            const priceHtml = isRoommate ? `<span class="price-lux fs-6">💰 Budget: ₹${prop.price}/mo</span>` : `<span class="price-lux">₹${prop.price}<small>/mo</small></span>`;
-            const btnText = isRoommate ? '<i class="bi bi-chat-dots"></i> Connect' : '<i class="bi bi-lightning-charge"></i> Secure Book';
+            const priceHtml = isRoommate ? `<span class="price-lux fs-6">💰 Rent: ₹${prop.price}/mo</span>` : `<span class="price-lux">₹${prop.price}<small>/mo</small></span>`;
+            const btnText = isRoommate ? '<i class="bi bi-door-open"></i> View Room' : '<i class="bi bi-lightning-charge"></i> Secure Book';
             const images = [prop.img, prop.img2, prop.img3];
             const indicators = images.map((_, idx) => `<button type="button" data-bs-target="#luxCar${prop.id}" data-bs-slide-to="${idx}" class="${idx===0?'active':''}"></button>`).join('');
             const slides = images.map((src, idx) => `<div class="carousel-item ${idx===0?'active':''}"><img src="${src}" class="d-block w-100" loading="lazy" onerror="this.src='https://placehold.co/600x400/e9ecef/6c757d?text=ApnaRooms+Luxury'"></div>`).join('');
@@ -496,10 +659,13 @@
                     </div>
                     <div class="card-body p-3">
                         <h5 class="card-title fw-bold">${prop.name}</h5>
-                        <p class="text-secondary-emphasis"><i class="bi bi-geo-alt-fill"></i> ${prop.location} · ${prop.category}</p>
-                        <div class="d-flex justify-content-between align-items-center mt-2 flex-wrap gap-2">
+                        <p class="text-secondary-emphasis small mb-2"><i class="bi bi-geo-alt-fill" style="color:#f97316;"></i> ${prop.location} · <span class="badge rounded-pill" style="background:rgba(30,77,183,0.1);color:#1e4db7;font-weight:700;">${prop.category}</span></p>
+                        <div class="card-action-row mt-2">
                             ${priceHtml}
-                            <button class="btn-book-lux action-lux-btn" data-id="${prop.id}" data-cat="${prop.category}">${btnText}</button>
+                            <div class="d-flex gap-2 align-items-center">
+                                <button class="btn-share-card share-card-btn" data-id="${prop.id}" title="Share property"><i class="bi bi-share-fill"></i></button>
+                                <button class="btn-book-lux action-lux-btn" data-id="${prop.id}" data-cat="${prop.category}">${btnText}</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -512,8 +678,18 @@
                 const prop = properties.find(p => p.id === id);
                 if(!prop) return;
                 addRecent(prop);
-                if(prop.category === "Roommate") { window.open(`https://wa.me/?text=${encodeURIComponent(`Hi ApnaRooms, interested in elite roommate: ${prop.name} (₹${prop.price})`)}`, '_blank'); }
+                if(prop.category === "Roommate") { window.open(`https://wa.me/?text=${encodeURIComponent(`Hi ApnaRooms, I'm interested in this Room for Rent: ${prop.name} (₹${prop.price}/mo) at ${prop.location}`)}`, '_blank'); }
                 else { openLuxBooking(prop); }
+            });
+        });
+        // Share button on every card
+        document.querySelectorAll('.share-card-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const id = parseInt(btn.dataset.id);
+                const prop = properties.find(p => p.id === id);
+                if(!prop) return;
+                shareProperty(prop, btn);
             });
         });
     }
@@ -532,16 +708,168 @@
     function onPriceFilter() { minPrice = parseInt(document.getElementById("luxMinPrice").value) || null; maxPrice = parseInt(document.getElementById("luxMaxPrice").value) || null; filterAll(); }
     function setCategoryLux(cat) { activeCat = cat; document.querySelectorAll('.category-lux').forEach(btn => { if(btn.dataset.category === cat) btn.classList.add('active'); else btn.classList.remove('active'); }); filterAll(); }
 
-    document.getElementById("luxAutoLocate")?.addEventListener("click", () => { document.getElementById("luxSearchInput").value = "Guwahati, GS Road"; searchKeyword = "Guwahati, GS Road"; filterAll(); alert("📍 Location optimized: Guwahati prime corridor"); });
+    // ---------- LOCATION NAV WITH RADIUS ----------
+    document.querySelectorAll('.loc-item').forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const loc = item.dataset.loc;
+            document.getElementById("luxSearchInput").value = loc;
+            document.getElementById("locationLabel").textContent = loc || "Prime Locations";
+            searchKeyword = loc;
+            document.getElementById("radiusSliderWrap").style.display = loc ? "block" : "none";
+            filterAll();
+        });
+    });
+
+    document.getElementById("luxAutoLocate")?.addEventListener("click", () => {
+        if(!navigator.geolocation) { alert("Geolocation not supported by your browser."); return; }
+        const btn = document.getElementById("luxAutoLocate");
+        btn.innerHTML = '<i class="bi bi-hourglass-split"></i> Locating...';
+        navigator.geolocation.getCurrentPosition(
+            (pos) => {
+                btn.innerHTML = '<i class="bi bi-crosshair2"></i> My Location';
+                document.getElementById("locationLabel").textContent = "Near Me";
+                document.getElementById("luxSearchInput").value = "GS Road"; // nearest prime location fallback
+                searchKeyword = "GS Road";
+                document.getElementById("radiusSliderWrap").style.display = "block";
+                filterAll();
+                alert(`📍 Location detected! Showing properties within ${document.getElementById('radiusSlider').value}km radius.`);
+            },
+            () => {
+                btn.innerHTML = '<i class="bi bi-crosshair2"></i> My Location';
+                alert("📍 Could not access your location. Please select a location from the dropdown instead.");
+            }
+        );
+    });
+
+    document.getElementById("radiusSlider")?.addEventListener("input", function() {
+        document.getElementById("radiusLabel").textContent = this.value + " km";
+        filterAll(); // In production, this would filter by actual geo-distance
+    });
     document.getElementById("luxSearchBtn").addEventListener("click", () => { searchKeyword = document.getElementById("luxSearchInput").value; filterAll(); });
     document.getElementById("luxPriceFilter").addEventListener("click", onPriceFilter);
     document.querySelectorAll(".category-lux").forEach(btn => btn.addEventListener("click", () => setCategoryLux(btn.dataset.category)));
 
     let currentLuxProp = null;
-    function openLuxBooking(prop) { currentLuxProp = prop; const tokenAmt = Math.floor(prop.price * 0.1); document.getElementById("luxModalRoomInfo").innerHTML = `<strong>🏆 ${prop.name}</strong> <span class="badge bg-secondary">${prop.location}</span>`; document.getElementById("luxModalRent").innerText = `₹${prop.price}`; document.getElementById("luxModalToken").innerText = `₹${tokenAmt}`; document.getElementById("luxModalTotal").innerText = `₹${tokenAmt}`; document.getElementById("luxAvailabilitySelect").value = "available"; document.getElementById("luxAvailMsg").innerHTML = ""; if(!modalRef) modalRef = new bootstrap.Modal(document.getElementById("luxBookingModal")); modalRef.show(); }
-    document.getElementById("luxAvailabilitySelect")?.addEventListener("change", function() { document.getElementById("luxAvailMsg").innerHTML = this.value === "unavailable" ? "❌ This estate is temporarily reserved" : "✅ Ready for instant token booking"; });
-    document.getElementById("luxConfirmPay")?.addEventListener("click", async () => { if(document.getElementById("luxAvailabilitySelect").value === "unavailable") { alert("Estate unavailable"); return; } const btn = document.getElementById("luxConfirmPay"); btn.disabled = true; btn.innerText = "⏳ Processing..."; await new Promise(r => setTimeout(r, 700)); alert(`✨ Token payment of ₹${Math.floor(currentLuxProp.price*0.1)} successful! Your stay at ${currentLuxProp.name} is confirmed.`); btn.disabled = false; btn.innerText = "💳 Simulate Payment Gateway"; modalRef.hide(); });
-    document.getElementById("luxSupportBtn")?.addEventListener("click", () => alert("📞 ApnaRooms 24K Helpline: +91 98765 43210 · Live chat available"));
+    function openLuxBooking(prop) { 
+        currentLuxProp = prop; 
+        document.getElementById("luxModalRoomInfo").innerHTML = `<strong>🏠 ${prop.name}</strong> <span class="badge ms-2" style="background:rgba(30,77,183,0.12);color:#1e4db7;">${prop.location}</span>`; 
+        document.getElementById("luxModalRent").innerText = `₹${prop.price}`; 
+        // Sync any already-active coupon code into modal input
+        const mi = document.getElementById("modalCouponInput");
+        if(mi && activeCoupon) { mi.value = activeCoupon.code; document.getElementById("modalCouponResult").innerHTML = `<span style="color:#15803d;">${activeCoupon.msg}</span>`; }
+        recalcModal(prop);
+        document.getElementById("luxAvailabilitySelect").value = "available"; 
+        document.getElementById("luxAvailMsg").innerHTML = ""; 
+        if(!modalRef) modalRef = new bootstrap.Modal(document.getElementById("luxBookingModal")); 
+        modalRef.show(); 
+    }
+    document.getElementById("luxAvailabilitySelect")?.addEventListener("change", function() { document.getElementById("luxAvailMsg").innerHTML = this.value === "unavailable" ? "❌ This property is temporarily reserved" : "✅ Ready for instant token booking"; });
+    document.getElementById("luxConfirmPay")?.addEventListener("click", async () => { 
+        if(document.getElementById("luxAvailabilitySelect").value === "unavailable") { alert("Property unavailable. Please try another."); return; } 
+        const btn = document.getElementById("luxConfirmPay"); 
+        btn.disabled = true; btn.innerHTML = "⏳ Processing..."; 
+        await new Promise(r => setTimeout(r, 700)); 
+        const finalAmt = document.getElementById("luxModalTotal").innerText;
+        const discountNote = activeCoupon ? ` (Coupon ${activeCoupon.code} applied ✅)` : '';
+        alert(`✅ Token payment of ${finalAmt} successful${discountNote}!\n\nYour booking at ${currentLuxProp.name} is confirmed. The ApnaRooms team will contact you shortly.`); 
+        btn.disabled = false; btn.innerHTML = "💳 Simulate Payment Gateway"; 
+        modalRef.hide(); 
+    });
+    document.getElementById("luxSupportBtn")?.addEventListener("click", () => alert("📞 ApnaRooms Helpline: +91 98765 43210 · Live chat available"));
+
+    // ---------- SHARE PROPERTY (on every card) ----------
+    function shareProperty(prop, btn) {
+        const shareText = `🏠 ${prop.name}\n📍 ${prop.location} · ${prop.category}\n💰 ₹${prop.price}/mo\n\n🔗 https://apnarooms.com/property/${prop.id}\n\n#ApnaRooms #ZeroBrokerage #Guwahati`;
+        if(navigator.share) {
+            navigator.share({ title: prop.name, text: shareText, url: `https://apnarooms.com/property/${prop.id}` }).catch(() => {});
+        } else {
+            navigator.clipboard.writeText(shareText).then(() => {
+                if(btn) { btn.classList.add('copied'); btn.innerHTML = '<i class="bi bi-check2-circle"></i>'; setTimeout(() => { btn.classList.remove('copied'); btn.innerHTML = '<i class="bi bi-share-fill"></i>'; }, 2000); }
+            }).catch(() => { prompt('Copy this link:', `https://apnarooms.com/property/${prop.id}`); });
+        }
+    }
+
+    // ---------- COUPON / REFERRAL LOGIC ----------
+    const COUPONS = {
+        'WELCOME10': { discount: 10, type: 'percent', msg: '🎉 10% off your first booking!' },
+        'APNA500':   { discount: 500, type: 'flat', msg: '✅ Flat ₹500 off applied!' },
+        'STUDENT20': { discount: 20, type: 'percent', msg: '🎓 Student discount: 20% off!' },
+        'NEWCITY':   { discount: 15, type: 'percent', msg: '🌆 New to Guwahati? 15% off!' },
+        'REFER2025': { discount: 500, type: 'flat', msg: '🤝 Referral bonus: ₹500 off for both!' },
+    };
+    let activeCoupon = null;
+
+    function applyAndRefreshModal(code, resultElId) {
+        const resultEl = document.getElementById(resultElId);
+        if(!code) { if(resultEl) resultEl.innerHTML = '<span style="color:#c0392b;">⚠️ Please enter a code first.</span>'; return; }
+        const coupon = COUPONS[code.toUpperCase()];
+        if(coupon) {
+            activeCoupon = { ...coupon, code: code.toUpperCase() };
+            if(resultEl) resultEl.innerHTML = `<span style="color:#15803d;">${coupon.msg}</span>`;
+            if(currentLuxProp) recalcModal(currentLuxProp);
+        } else {
+            activeCoupon = null;
+            if(resultEl) resultEl.innerHTML = `<span style="color:#c0392b;">❌ Invalid code. Try: WELCOME10 · APNA500 · STUDENT20</span>`;
+            if(currentLuxProp) recalcModal(currentLuxProp);
+        }
+    }
+
+    function recalcModal(prop) {
+        const tokenAmt = Math.floor(prop.price * 0.1);
+        let discounted = tokenAmt;
+        if(activeCoupon) {
+            if(activeCoupon.type === 'flat') { discounted = Math.max(0, tokenAmt - activeCoupon.discount); }
+            else { discounted = tokenAmt - Math.floor(tokenAmt * activeCoupon.discount / 100); }
+        }
+        document.getElementById("luxModalToken").innerText = `₹${tokenAmt}`;
+        document.getElementById("luxModalTotal").innerText = `₹${discounted}`;
+        const discRow = document.getElementById("luxDiscountRow");
+        const origTotal = document.getElementById("luxModalOrigTotal");
+        const badge = document.getElementById("modalCouponBadge");
+        if(activeCoupon && discounted < tokenAmt) {
+            discRow.style.display = 'flex';
+            const saved = tokenAmt - discounted;
+            document.getElementById("luxDiscountLabel").textContent = `🎟️ ${activeCoupon.code}:`;
+            document.getElementById("luxDiscountAmt").textContent = `-₹${saved}`;
+            origTotal.textContent = `₹${tokenAmt}`;
+            origTotal.style.display = 'inline';
+            if(badge) { badge.textContent = `${activeCoupon.type === 'flat' ? '₹'+activeCoupon.discount+' OFF' : activeCoupon.discount+'% OFF'}`; badge.style.display = 'inline'; }
+        } else {
+            discRow.style.display = 'none';
+            origTotal.style.display = 'none';
+            if(badge) badge.style.display = 'none';
+        }
+    }
+
+    // Modal coupon apply button
+    document.getElementById("modalApplyCouponBtn")?.addEventListener("click", () => {
+        const code = document.getElementById("modalCouponInput").value.trim();
+        applyAndRefreshModal(code, "modalCouponResult");
+    });
+    document.getElementById("modalCouponInput")?.addEventListener("keydown", (e) => {
+        if(e.key === "Enter") document.getElementById("modalApplyCouponBtn").click();
+    });
+
+    // Global coupon section
+    document.getElementById("applyCouponBtn")?.addEventListener("click", () => {
+        const code = document.getElementById("couponInput").value.trim();
+        applyAndRefreshModal(code, "couponResult");
+        // Sync to modal coupon input if exists
+        const mi = document.getElementById("modalCouponInput");
+        if(mi && code) { mi.value = code; }
+    });
+    document.getElementById("couponInput")?.addEventListener("keydown", (e) => {
+        if(e.key === "Enter") document.getElementById("applyCouponBtn").click();
+    });
+
+    function copyReferral() {
+        const code = document.getElementById("myReferralCode").value;
+        navigator.clipboard.writeText(code).then(() => {
+            const btn = document.getElementById("copyReferralBtn");
+            btn.textContent = 'Copied!'; setTimeout(() => btn.textContent = 'Copy', 1800);
+        });
+    }
 
     window.addEventListener("DOMContentLoaded", () => {
         initKineticZigzag();
