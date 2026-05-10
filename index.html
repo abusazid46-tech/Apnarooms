@@ -164,6 +164,17 @@
         }
         .btn-share-card:hover { background: rgba(249,115,22,0.18); transform: scale(1.05); }
         .btn-share-card.copied { background: rgba(22,163,74,0.1); border-color: rgba(22,163,74,0.4); color: #16a34a; }
+        /* Property Detail Tags */
+        .prop-details-row {
+            display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 4px;
+        }
+        .prop-detail-tag {
+            display: inline-flex; align-items: center; gap: 5px;
+            background: rgba(30,77,183,0.07); border: 1px solid rgba(30,77,183,0.15);
+            border-radius: 30px; padding: 4px 11px; font-size: 0.76rem;
+            font-weight: 600; color: #1e4db7; white-space: nowrap;
+        }
+        .prop-detail-tag i { color: #f97316; font-size: 0.8rem; }
         /* Card action row */
         .card-action-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
         /* Shimmer */
@@ -596,14 +607,14 @@
 
     // ---------- PROPERTIES (ALL CORE FEATURES INTACT) ----------
     const properties = [
-        { id: 1, name: "The Golden Arc PG (Boys)", location: "Uzan Bazar", price: 7500, verified: true, category: "PG", img: "https://picsum.photos/id/164/500/350", img2: "https://picsum.photos/id/169/500/350", img3: "https://picsum.photos/id/175/500/350" },
-        { id: 2, name: "Brahmaputra Heritage Homestay", location: "Panbazar", price: 12000, verified: true, category: "Homestay", img: "https://picsum.photos/id/20/500/350", img2: "https://picsum.photos/id/22/500/350", img3: "https://picsum.photos/id/28/500/350" },
-        { id: 3, name: "Emerald Valley Flat", location: "Dispur", price: 18500, verified: true, category: "Flat", img: "https://picsum.photos/id/106/500/350", img2: "https://picsum.photos/id/108/500/350", img3: "https://picsum.photos/id/112/500/350" },
-        { id: 4, name: "Room for Rent - Tech Professional Zone", location: "GS Road", price: 8000, verified: true, category: "Roommate", img: "https://picsum.photos/id/152/500/350", img2: "https://picsum.photos/id/155/500/350", img3: "https://picsum.photos/id/159/500/350" },
-        { id: 5, name: "Velvet Suites PG for Women", location: "Beltola", price: 9500, verified: true, category: "PG", img: "https://picsum.photos/id/29/500/350", img2: "https://picsum.photos/id/39/500/350", img3: "https://picsum.photos/id/42/500/350" },
-        { id: 6, name: "Riverside Opus Homestay", location: "Fancy Bazar", price: 14500, verified: false, category: "Homestay", img: "https://picsum.photos/id/96/500/350", img2: "https://picsum.photos/id/98/500/350", img3: "https://picsum.photos/id/100/500/350" },
-        { id: 7, name: "2BHK Grandeur Flat", location: "Zoo Road", price: 22000, verified: true, category: "Flat", img: "https://picsum.photos/id/177/500/350", img2: "https://picsum.photos/id/179/500/350", img3: "https://picsum.photos/id/190/500/350" },
-        { id: 8, name: "Room for Rent - Student Friendly", location: "Jayanagar", price: 5500, verified: true, category: "Roommate", img: "https://picsum.photos/id/202/500/350", img2: "https://picsum.photos/id/205/500/350", img3: "https://picsum.photos/id/210/500/350" }
+        { id: 1, name: "Girls PG Near SPM IAS ACADEMY – Zoo Road, Guwahati", location: "Near SPM Lallans Coaching", price: 7500, verified: true, category: "PG", pgType: "Girls PG", roomType: "Single/Double", meals: "Meals Included", wifi: "WiFi Available", img: "https://picsum.photos/id/164/500/350", img2: "https://picsum.photos/id/169/500/350", img3: "https://picsum.photos/id/175/500/350" },
+        { id: 2, name: "Homestay In Zoo Road Guwahati", location: "Near Commerce College", price: 12000, verified: true, category: "Homestay", pgType: "Couple Friendly", roomType: "AC/Non-AC", meals: "Meals Not Included", wifi: "WiFi Available", img: "https://picsum.photos/id/20/500/350", img2: "https://picsum.photos/id/22/500/350", img3: "https://picsum.photos/id/28/500/350" },
+        { id: 3, name: "Emerald Valley Flat", location: "Dispur", price: 18500, verified: true, category: "Flat", bhk: "2 BHK", floor: "3rd Floor", furnishing: "Semi-Furnished", parking: "Parking Available", img: "https://picsum.photos/id/106/500/350", img2: "https://picsum.photos/id/108/500/350", img3: "https://picsum.photos/id/112/500/350" },
+        { id: 4, name: "2 BHK + Store Room in Sachal – VIP Road Six-Mile", location: "Sachal VIP Main Road, Six-Mile, Near ZUDIO Showrooms", price: 8000, verified: true, category: "Roommate", houseType: "House", roomType: "2 BHK + Store Room", floor: "Ground Floor", wifi: "Not Mentioned", img: "https://picsum.photos/id/152/500/350", img2: "https://picsum.photos/id/155/500/350", img3: "https://picsum.photos/id/159/500/350" },
+        { id: 5, name: "Velvet Suites PG for Women", location: "Beltola", price: 9500, verified: true, category: "PG", pgType: "Girls PG", roomType: "Single/Double", meals: "Meals Included", wifi: "WiFi Available", img: "https://picsum.photos/id/29/500/350", img2: "https://picsum.photos/id/39/500/350", img3: "https://picsum.photos/id/42/500/350" },
+        { id: 6, name: "Riverside Opus Homestay", location: "Fancy Bazar", price: 14500, verified: false, category: "Homestay", pgType: "Family Friendly", roomType: "AC/Non-AC", meals: "Meals Included", wifi: "WiFi Available", img: "https://picsum.photos/id/96/500/350", img2: "https://picsum.photos/id/98/500/350", img3: "https://picsum.photos/id/100/500/350" },
+        { id: 7, name: "2BHK Grandeur Flat", location: "Zoo Road", price: 22000, verified: true, category: "Flat", bhk: "2 BHK", floor: "2nd Floor", furnishing: "Fully Furnished", parking: "Parking Available", img: "https://picsum.photos/id/177/500/350", img2: "https://picsum.photos/id/179/500/350", img3: "https://picsum.photos/id/190/500/350" },
+        { id: 8, name: "Room for Rent - Student Friendly", location: "Jayanagar", price: 5500, verified: true, category: "Roommate", houseType: "PG Room", roomType: "Single Room", floor: "1st Floor", wifi: "WiFi Available", img: "https://picsum.photos/id/202/500/350", img2: "https://picsum.photos/id/205/500/350", img3: "https://picsum.photos/id/210/500/350" }
     ];
 
     let currentFiltered = [...properties];
@@ -633,6 +644,34 @@
         skeleton.style.display = "none"; grid.style.display = "flex";
     }
 
+    function buildPropDetails(prop) {
+        let details = '';
+        const tag = (icon, text) => `<span class="prop-detail-tag"><i class="${icon}"></i> ${text}</span>`;
+        if(prop.category === "PG") {
+            details += tag("bi bi-building", prop.pgType || "PG");
+            details += tag("bi bi-door-closed", prop.roomType || "Room Type N/A");
+            details += tag("bi bi-egg-fried", prop.meals || "Meals N/A");
+            details += tag("bi bi-wifi", prop.wifi || "WiFi N/A");
+        } else if(prop.category === "Roommate") {
+            details += tag("bi bi-house-door", prop.houseType || "House");
+            details += tag("bi bi-door-closed", prop.roomType || "Room Type N/A");
+            details += tag("bi bi-layers", prop.floor || "Floor N/A");
+            const wifiIcon = prop.wifi && prop.wifi.toLowerCase().includes("not") ? "bi bi-wifi-off" : "bi bi-wifi";
+            details += tag(wifiIcon, prop.wifi || "WiFi N/A");
+        } else if(prop.category === "Flat") {
+            details += tag("bi bi-building", prop.bhk || "BHK N/A");
+            details += tag("bi bi-layers", prop.floor || "Floor N/A");
+            details += tag("bi bi-couch", prop.furnishing || "Furnishing N/A");
+            details += tag("bi bi-car-front", prop.parking || "Parking N/A");
+        } else if(prop.category === "Homestay") {
+            details += tag("bi bi-people", prop.pgType || "Homestay");
+            details += tag("bi bi-thermometer-half", prop.roomType || "Room Type N/A");
+            details += tag("bi bi-egg-fried", prop.meals || "Meals N/A");
+            details += tag("bi bi-wifi", prop.wifi || "WiFi N/A");
+        }
+        return details ? `<div class="prop-details-row">${details}</div>` : '';
+    }
+
     function renderLuxCards(propList) {
         const grid = document.getElementById("luxPropertiesGrid");
         const noRes = document.getElementById("luxNoResults");
@@ -642,7 +681,7 @@
         propList.forEach(prop => {
             const isRoommate = prop.category === "Roommate";
             const priceHtml = isRoommate ? `<span class="price-lux fs-6">💰 Rent: ₹${prop.price}/mo</span>` : `<span class="price-lux">₹${prop.price}<small>/mo</small></span>`;
-            const btnText = isRoommate ? '<i class="bi bi-door-open"></i> View Room' : '<i class="bi bi-lightning-charge"></i> Secure Book';
+            const btnText = '<i class="bi bi-lightning-charge"></i> Secure Book';
             const images = [prop.img, prop.img2, prop.img3];
             const indicators = images.map((_, idx) => `<button type="button" data-bs-target="#luxCar${prop.id}" data-bs-slide-to="${idx}" class="${idx===0?'active':''}"></button>`).join('');
             const slides = images.map((src, idx) => `<div class="carousel-item ${idx===0?'active':''}"><img src="${src}" class="d-block w-100" loading="lazy" onerror="this.src='https://placehold.co/600x400/e9ecef/6c757d?text=ApnaRooms+Luxury'"></div>`).join('');
@@ -660,6 +699,7 @@
                     <div class="card-body p-3">
                         <h5 class="card-title fw-bold">${prop.name}</h5>
                         <p class="text-secondary-emphasis small mb-2"><i class="bi bi-geo-alt-fill" style="color:#f97316;"></i> ${prop.location} · <span class="badge rounded-pill" style="background:rgba(30,77,183,0.1);color:#1e4db7;font-weight:700;">${prop.category}</span></p>
+                        ${buildPropDetails(prop)}
                         <div class="card-action-row mt-2">
                             ${priceHtml}
                             <div class="d-flex gap-2 align-items-center">
@@ -678,7 +718,7 @@
                 const prop = properties.find(p => p.id === id);
                 if(!prop) return;
                 addRecent(prop);
-                if(prop.category === "Roommate") { window.open(`https://wa.me/?text=${encodeURIComponent(`Hi ApnaRooms, I'm interested in this Room for Rent: ${prop.name} (₹${prop.price}/mo) at ${prop.location}`)}`, '_blank'); }
+                if(prop.category === "Roommate") { openLuxBooking(prop); }
                 else { openLuxBooking(prop); }
             });
         });
